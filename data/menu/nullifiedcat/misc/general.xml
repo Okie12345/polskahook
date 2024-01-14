@@ -72,20 +72,6 @@
                           tooltip="Distance to consider Spy close."/>
         </List>
     </Box>
-    <Box height="content" width="content" padding="12 6 6 6" name="Region selector" y="250">
-        <List width="155">
-            <AutoVariable width="fill" target="dc.enable" label="Enable"/>
-            <AutoVariable width="fill" target="dc.restrict" label="Only selected regions"/>
-            <AutoVariable width="fill" target="dc.toggle-europe" label="Toggle Europe"/>
-            <AutoVariable width="fill" target="dc.toggle-north-america" label="Toggle North America"/>
-            <AutoVariable width="fill" target="dc.toggle-south-america" label="Toggle South America"/>
-            <AutoVariable width="fill" target="dc.toggle-asia" label="Toggle Asia"/>
-            <AutoVariable width="fill" target="dc.toggle-africa" label="Toggle Africa"/>
-            <AutoVariable width="fill" target="dc.toggle-oceania" label="Toggle Oceania"/>
-            <AutoVariable width="fill" target="dc.regions" label="Raw region list"/>
-        </List>
-    </Box>
-
     <Box height="content" width="content" padding="12 6 6 6" name="Cheater detection" x="166" y="235">
         <List width="205">
             <AutoVariable width="fill" target="find-cheaters.enable" label="Enable"

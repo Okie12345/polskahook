@@ -3,5 +3,6 @@
         <Include path="nullifiedcat/misc/general.xml"/>
         <Include path="nullifiedcat/misc/chat.xml"/>
         <Include path="nullifiedcat/misc/RichPresence.xml"/>
+        <Include path="nullifiedcat/misc/regions.xml"/>
     </TabContainer>
 </Tab>
