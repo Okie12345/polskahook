@@ -7,8 +7,8 @@
     <Box padding="12 6 6 6" width="content" height="content" name="Opcje cfg" x="195">
         <List width="200">
             <AutoVariable width="fill" target="cfg.save" label="Zapisz cfg"/>
-            <AutoVariable width="fill" target="cfg.load" label="Załaduj cfg"/>
-            <AutoVariable width="fill" target="cfg.delete" label="Usuń cfg"/>
+            <AutoVariable width="fill" target="cfg.load" label="Zaladuj cfg"/>
+            <AutoVariable width="fill" target="cfg.delete" label="Usun cfg"/>
         </List>
     </Box>
 </Tab>
