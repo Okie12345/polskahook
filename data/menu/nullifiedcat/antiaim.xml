@@ -1,75 +1,75 @@
 <Tab name="Eich vi Eich" padding="4 4 4 4">
     <Box padding="12 6 6 6" width="content" height="content" name="Anti-aim">
         <List width="150">
-            <AutoVariable width="fill" target="antiaim.enable" label="Włącz"/>
+            <AutoVariable width="fill" target="antiaim.enable" label="Wlacz"/>
             <AutoVariable width="fill" target="antiaim.draw-fakes" label="Rysuj fakei"/>
-            <AutoVariable width="fill" target="antiaim.crouch" label="Fake kucnięcie"/>
+            <AutoVariable width="fill" target="antiaim.crouch" label="Fake kucniecie"/>
             <AutoVariable width="fill" target="antiaim.no-clamp" label="Bez clampa"
-                          tooltip="Nie clampuj kątów (trzymaj pitch pomiędzy ±89° i yaw pomiędzy ±180°)."/>
+                          tooltip="Nie clampuj katow (trzymaj pitch pomiedzy ±89° i yaw pomiedzy ±180°)."/>
             <AutoVariable width="fill" target="misc.fakelag" label="Fakelag" min="0" max="22"/>
             <AutoVariable width="fill" target="misc.fakelag-midair-only" label="Fakelag tylko w powietrzu"/>
-            <AutoVariable width="fill" target="antiaim.spin-speed" label="Spin speed" tooltip="Prędkość yaw spina."
+            <AutoVariable width="fill" target="antiaim.spin-speed" label="Spin speed" tooltip="Predkosć yaw spina."
                           min="-45" max="45" step="0.1"/>
             <AutoVariable width="fill" target="antiaim.roll" label="Roll"/>
             <Box padding="12 6 6 6" width="content" height="content" name="Pitch" y="90">
                 <List width="138">
-                    <LabeledObject width="fill" label="Fałszywy Pitch">
+                    <LabeledObject width="fill" label="Falszywy Pitch">
                         <Select target="antiaim.pitch.fake">
-                            <Option name="Wył" value="0"/>
-                            <Option name="Góra" value="1"/>
-                            <Option name="Dół" value="2"/>
-                            <Option name="Odwrócony" value="3"/>
+                            <Option name="Wyl" value="0"/>
+                            <Option name="Gora" value="1"/>
+                            <Option name="Dol" value="2"/>
+                            <Option name="Odwrocony" value="3"/>
                         </Select>
                     </LabeledObject>
                     <LabeledObject width="fill" label="Prawdziwy Pitch">
                         <Select target="antiaim.pitch.real">
-                            <Option name="Wył" value="0"/>
+                            <Option name="Wyl" value="0"/>
                             <Option name="Customowy" value="1"/>
-                            <Option name="Góra" value="2"/>
-                            <Option name="Dół" value="3"/>
+                            <Option name="Gora" value="2"/>
+                            <Option name="Dol" value="3"/>
                             <Option name="Drganie" value="4"/>
                             <Option name="Losowy" value="5"/>
-                            <Option name="Flip" value="6"/>
-                            <Option name="Heck" value="7"/>
+                            <Option name="Odwrocony" value="6"/>
+                            <Option name="Losowy2" value="7"/>
                         </Select>
                     </LabeledObject>
                     <AutoVariable width="fill" target="antiaim.pitch.static" label="Customowy"
-                                  tooltip="Używany 'Real Pitch' is set to 'Custom'."/>
+                                  tooltip="Używany kiedy 'Prawdziwy Pitch' jest ustawiony na 'Customowy'."/>
                 </List>
             </Box>
             <Box padding="12 6 6 6" width="content" height="content" name="Yaw" y="120">
                 <List width="138">
-                    <LabeledObject width="fill" label="Fake Yaw">
+                    <LabeledObject width="fill" label="Falszywy Yaw">
                         <Select target="antiaim.yaw.fake">
-                            <Option name="Disable" value="0"/>
-                            <Option name="Custom" value="1"/>
-                            <Option name="Custom Offset" value="2"/>
-                            <Option name="Left" value="3"/>
-                            <Option name="Right" value="4"/>
-                            <Option name="Back" value="5"/>
-                            <Option name="Spin" value="6"/>
-                            <Option name="Edge" value="7"/>
-                            <Option name="Sideways" value="8"/>
-                            <Option name="Heck" value="9"/>
+                            <Option name="Wyl" value="0"/>
+                            <Option name="Customowy" value="1"/>
+                            <Option name="Offset Customowego" value="2"/>
+                            <Option name="Lewo" value="3"/>
+                            <Option name="Prawo" value="4"/>
+                            <Option name="Tyl" value="5"/>
+                            <Option name="Krecenie" value="6"/>
+                            <Option name="Krawedź" value="7"/>
+                            <Option name="Bokiem" value="8"/>
+                            <Option name="losowy2" value="9"/>
                             <Option name="Omega" value="10"/>
-                            <Option name="Random" value="11"/>
-                            <Option name="Random Clamped" value="12"/>
+                            <Option name="losowy" value="11"/>
+                            <Option name="Clamped losowy" value="12"/>
                         </Select>
                     </LabeledObject>
-                    <LabeledObject width="fill" label="Real Yaw">
+                    <LabeledObject width="fill" label="Prawdziwy Yaw">
                         <Select target="antiaim.yaw.real">
-                            <Option name="Disable" value="0"/>
-                            <Option name="Custom" value="1"/>
-                            <Option name="Custom Offset" value="2"/>
-                            <Option name="Left" value="3"/>
-                            <Option name="Right" value="4"/>
-                            <Option name="Back" value="5"/>
-                            <Option name="Spin" value="6"/>
-                            <Option name="Edge" value="7"/>
-                            <Option name="Sideways" value="8"/>
-                            <Option name="Heck" value="9"/>
+                            <Option name="Wyl" value="0"/>
+                            <Option name="Customowy" value="1"/>
+                            <Option name="Offset Customowego" value="2"/>
+                            <Option name="Lewo" value="3"/>
+                            <Option name="Prawo" value="4"/>
+                            <Option name="Tyl" value="5"/>
+                            <Option name="Krecenie" value="6"/>
+                            <Option name="Krawedź" value="7"/>
+                            <Option name="Bokiem" value="8"/>
+                            <Option name="losowy2" value="9"/>
                             <Option name="Omega" value="10"/>
-                            <Option name="Random" value="11"/>
+                            <Option name="" value="11"/>
                             <Option name="Random Clamped" value="12"/>
                         </Select>
                     </LabeledObject>
