@@ -3,31 +3,31 @@
 [![TF2](https://img.shields.io/badge/game-TF2-orange.svg?style=flat-square)](https://store.steampowered.com/app/440/Team_Fortress_2/)
 [![GNU/Linux](https://img.shields.io/badge/platform-GNU%2FLinux-ff69b4?style=flat-square)](https://www.gnu.org/gnu/linux-and-gnu.en.html)
 [![x86](https://img.shields.io/badge/arch-x86-red.svg?style=flat-square)](https://en.wikipedia.org/wiki/X86)
-[![License](https://img.shields.io/github/license/explowz/cathook.svg?style=flat-square)](LICENSE)
-[![Issues](https://img.shields.io/github/issues/explowz/cathook.svg?style=flat-square)](https://github.com/explowz/cathook/issues)
+[![Licencja](https://img.shields.io/github/license/explowz/cathook.svg?style=flat-square)](LICENSE)
+[![Problemy](https://img.shields.io/github/issues/explowz/cathook.svg?style=flat-square)](https://github.com/explowz/cathook/issues)
 
 Darmowy program do ćwiczenia o otwartym źródle na GNU/Linux do gry **Team Fortress 2**. Zaprojektowany jako internal cheat - [Wspólna Biblioteka](https://en.wikipedia.org/wiki/Library_(computing)#Shared_libraries) (SO) ładowany do procesu gry. Kompatybilny ze Steamową wersją gry.
 
 ## Spis Treści
 
 - [Spis Treści](#table-of-contents)
-- [Getting started](#getting-started)
-    - [Dependencies](#dependencies)
+- [Jak rozpocząć](#getting-started)
+    - [Zależnośći](#dependencies)
     - [Pobieranie](#downloading)
     - [Kompilowanie ze źródła](#compiling-from-source)
-    - [Loading / Injecting into game process](#loading--injecting-into-game-process)
+    - [Ładowanie / Injectowanie w proces gry](#loading--injecting-into-game-process)
 - [FAQ](#faq)
     - [Jak mogę otworzyć menu?](#how-do-i-open-the-menu)
-    - [Gdzie jest zlokalizowany plik cfg?](#where-is-my-config-file-saved)
+    - [Gdzie jest zlokalizowany mój plik cfg?](#where-is-my-config-file-saved)
     - [Ładowanie / Injectowanie do procesu](#loading--injecting-into-game-process)
 
-## Getting started
+## Jak rozpocząć
 
-### Dependencies
+### Zależności
 
-The `dialog` package is not mandatory, yet recommended.
+Paczka `dialog` nie jest obowiązkowa, ale rekomendowana.
 
-Dependencies are handled automatically by the [dependencycheck](https://github.com/explowz/cathook/blob/master/scripts/dependencycheck) script.
+Zależnośći są sprawdzane automatycznie przez [dependencycheck](https://github.com/explowz/cathook/blob/master/scripts/dependencycheck).
 
 ### Pobieranie
 
@@ -41,28 +41,28 @@ Folder `polskahook` powinien zostać stworzony i zawierać wszystkie pliki źró
 
 Kiedy już będziesz miał kopię źródła polskahook, następnym krokiem będzie otworzenie go w IDE twojego wyboru.
 
-Zmień wszystkie `-march=native -mtune=native` argumenty w [CMakeLists.txt](https://github.com/explowz/cathook/blob/master/CMakeLists.txt) do `-march=<your cpu-type> -mtune=<your cpu-type>`. This should result in more performant code, optimized for your CPU. The list of valid options can be found [here](https://gcc.gnu.org/onlinedocs/gcc/x86-Options.html).
+Zmień wszystkie `-march=native -mtune=native` argumenty w [CMakeLists.txt](https://github.com/explowz/cathook/blob/master/CMakeLists.txt) do `-march=<your cpu-type> -mtune=<your cpu-type>`. Powinno to skutkować bardziej wydajnym kodem, zoptymalizowanym pod twoje CPU. Listę prawidłowych opcji można znaleźć [tutaj](https://gcc.gnu.org/onlinedocs/gcc/x86-Options.html).
 
-And simply run the following command while inside the source folder:
+I po prostu uruchom tą komendę kiedy jesteś w folderze z kodem źródłowym:
 
     ./update
 
-If everything went right you should receive a binary file named `libcathook.so`.
+Jeżeli wszytsko poszło dobrze, powinieneś otrzymać następującą binarkę `libcathook.so`.
 
-### Loading / Injecting into game process
+### Ładowanie / Injectowanie do procesu
 
-Run the following command while inside the source folder:
+Uruchom następującą komendę kiedy jesteś w folderze z kodem źródłowym:
 
     sudo ./attach
 
-This will inject `libcathook.so` into the `hl2_linux` process.
+To zinjectuje `libcathook.so` do procesu `hl2_linux`.
 
-When injected, the menu can be opened using the `INSERT` key.
+Kiedy zainjectowany, klawisz `INSERT` uruchamia menu.
 
 ## FAQ
 
-### How do I open the menu?
-Press <kbd>INSERT</kbd> while focused on the TF2 window.
+### Jak mogę otworzyć menu?
+Naciśnij klawisz <kbd>INSERT</kbd> kiedy w oknie TF2.
 
-### Where is my config file saved?
-Configuration files are saved inside the `cathook` folder located in your `opt` folder (`/opt/cathook/data`). The config is in human-readable format and can be edited via your text editor of choice.
+### Gdzie jest zlokalizowany mój plik cfg?
+Pliki konfiguracyjne są zlokalizowane w folderze `cathook` który jest zlokalizowany w folderze `opt` (`/opt/cathook/data`). Plik cfg jest czytelny dla człowieka i może być edytowany w edytorze tekstu twojego wyboru.
