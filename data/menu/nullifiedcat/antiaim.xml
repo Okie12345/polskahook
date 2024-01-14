@@ -1,7 +1,7 @@
 <Tab name="HvH" padding="4 4 4 4">
     <Box padding="12 6 6 6" width="content" height="content" name="Anti-aim">
         <List width="150">
-            <AutoVariable width="fill" target="antiaim.enable" label="Wlacz"/>
+            <AutoVariable width="fill" target="antiaim.enable" label="Wl"/>
             <AutoVariable width="fill" target="antiaim.draw-fakes" label="Rysuj fakei"/>
             <AutoVariable width="fill" target="antiaim.crouch" label="Fake kucniecie"/>
             <AutoVariable width="fill" target="antiaim.no-clamp" label="Bez clampa"
@@ -70,35 +70,35 @@
                             <Option name="losowy2" value="9"/>
                             <Option name="Omega" value="10"/>
                             <Option name="losowy" value="11"/>
-                            <Option name="Random Clamped" value="12"/>
+                            <Option name="Clamped losowy" value="12"/>
                         </Select>
                     </LabeledObject>
-                    <AutoVariable width="fill" target="antiaim.yaw.fake.static" label="Custom Fake"
-                                  tooltip="Used when 'Fake Yaw' is set to 'Custom'."/>
-                    <AutoVariable width="fill" target="antiaim.yaw.real.static" label="Custom Real"
-                                  tooltip="Used when 'Real Yaw' is set to 'Custom'."/>
+                    <AutoVariable width="fill" target="antiaim.yaw.fake.static" label="Customowy Falszywy"
+                                  tooltip="Uzywany kiedy 'Falszywy Yaw' jest ustawiony na 'Customowy'."/>
+                    <AutoVariable width="fill" target="antiaim.yaw.real.static" label="Customowy Prawdziwy"
+                                  tooltip="Uzywany kiedy 'Prawdziwy Yaw' jest ustawiony na 'Customowy'."/>
                 </List>
             </Box>
         </List>
     </Box>
     <Box padding="12 6 6 6" width="content" height="content" name="Resolver" x="170">
         <List width="150">
-            <AutoVariable width="fill" target="anti-anti-aim.enable" label="Enable"
-                          tooltip="Attempt to bruteforce enemy antiaim."/>
+            <AutoVariable width="fill" target="anti-anti-aim.enable" label="Wl"
+                          tooltip="Probuje zlamac anti-aim przeciwnika sila."/>
         </List>
     </Box>
-    <Box padding="12 6 6 6" name="Anti-resolver" width="content" height="content" x="340">
+    <Box padding="12 6 6 6" name="Anty-resolver" width="content" height="content" x="340">
         <List width="150">
-            <AutoVariable width="fill" target="antiaim.aaaa.enable" label="Enable"/>
-            <AutoVariable width="fill" target="antiaim.aaaa.flip-key" label="Flip key"/>
-            <AutoVariable width="fill" target="antiaim.aaaa.interval.seconds" label="Enable"/>
-            <AutoVariable width="fill" target="antiaim.aaaa.interval.random-low" label="Random low"/>
-            <AutoVariable width="fill" target="antiaim.aaaa.interval.random-high" label="Random high"/>
-            <LabeledObject width="fill" label="Mode">
+            <AutoVariable width="fill" target="antiaim.aaaa.enable" label="Wl"/>
+            <AutoVariable width="fill" target="antiaim.aaaa.flip-key" label="Klawisz odwrocenia"/>
+            <AutoVariable width="fill" target="antiaim.aaaa.interval.seconds" label="Wl"/>
+            <AutoVariable width="fill" target="antiaim.aaaa.interval.random-low" label="Losowe niskie"/>
+            <AutoVariable width="fill" target="antiaim.aaaa.interval.random-high" label="Losowe wysokie"/>
+            <LabeledObject width="fill" label="Tryb">
                 <Select target="antiaim.aaaa.mode">
-                    <Option name="(Fake)up" value="0"/>
-                    <Option name="(Fake)down" value="1"/>
-                    <Option name="(Fake)center" value="2"/>
+                    <Option name="(Falszywa)gora" value="0"/>
+                    <Option name="(Falszywa)dol" value="1"/>
+                    <Option name="(Falszywa)srodek" value="2"/>
                 </Select>
             </LabeledObject>
         </List>
