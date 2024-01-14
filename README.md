@@ -1,4 +1,4 @@
-# Cathook
+# Polskahook
 [![C++](https://img.shields.io/badge/language-C%2B%2B-%23f34b7d.svg?style=flat-square)](https://en.wikipedia.org/wiki/C%2B%2B)
 [![TF2](https://img.shields.io/badge/game-TF2-orange.svg?style=flat-square)](https://store.steampowered.com/app/440/Team_Fortress_2/)
 [![GNU/Linux](https://img.shields.io/badge/platform-GNU%2FLinux-ff69b4?style=flat-square)](https://www.gnu.org/gnu/linux-and-gnu.en.html)
@@ -6,20 +6,20 @@
 [![License](https://img.shields.io/github/license/explowz/cathook.svg?style=flat-square)](LICENSE)
 [![Issues](https://img.shields.io/github/issues/explowz/cathook.svg?style=flat-square)](https://github.com/explowz/cathook/issues)
 
-Free open-source GNU/Linux training software for the game **Team Fortress 2**. Designed as an internal cheat - [Shared Library](https://en.wikipedia.org/wiki/Library_(computing)#Shared_libraries) (SO) loadable into game process. Compatible with the Steam version of the game.
+Darmowy program do ćwiczenia o otwartym źródle na GNU/Linux do gry **Team Fortress 2**. Zaprojektowany jako internal cheat - [Wspólna Biblioteka](https://en.wikipedia.org/wiki/Library_(computing)#Shared_libraries) (SO) ładowany do procesu gry. Kompatybilny ze Steamową wersją gry.
 
-## Table of Contents
+## Spis Treści
 
-- [Table of Contents](#table-of-contents)
+- [Spis Treści](#table-of-contents)
 - [Getting started](#getting-started)
     - [Dependencies](#dependencies)
-    - [Downloading](#downloading)
-    - [Compiling from source](#compiling-from-source)
+    - [Pobieranie](#downloading)
+    - [Kompilowanie ze źródła](#compiling-from-source)
     - [Loading / Injecting into game process](#loading--injecting-into-game-process)
 - [FAQ](#faq)
-    - [How do I open the menu?](#how-do-i-open-the-menu)
-    - [Where is my config file saved?](#where-is-my-config-file-saved)
-    - [Loading / Injecting into game process](#loading--injecting-into-game-process)
+    - [Jak mogę otworzyć menu?](#how-do-i-open-the-menu)
+    - [Gdzie jest zlokalizowany plik cfg?](#where-is-my-config-file-saved)
+    - [Ładowanie / Injectowanie do procesu](#loading--injecting-into-game-process)
 
 ## Getting started
 
@@ -29,19 +29,19 @@ The `dialog` package is not mandatory, yet recommended.
 
 Dependencies are handled automatically by the [dependencycheck](https://github.com/explowz/cathook/blob/master/scripts/dependencycheck) script.
 
-### Downloading
+### Pobieranie
 
-Open a terminal window and enter the following command:
+Otwórz okno terminala i wpisz następującą komendę:
 
     bash <(wget -qO- https://raw.githubusercontent.com/explowz/One-in-all-cathook-install/master/install-all)
 
-The `cathook` folder should have been created successfully, containing all source files.
+Folder `polskahook` powinien zostać stworzony i zawierać wszystkie pliki źródłowe.
 
-### Compiling from source
+### Kompilowanie ze źródła
 
-When you have obtained a copy of the source code, the next step is opening it with your IDE of choice.
+Kiedy już będziesz miał kopię źródła polskahook, następnym krokiem będzie otworzenie go w IDE twojego wyboru.
 
-Then change all `-march=native -mtune=native` arguments inside [CMakeLists.txt](https://github.com/explowz/cathook/blob/master/CMakeLists.txt) to `-march=<your cpu-type> -mtune=<your cpu-type>`. This should result in more performant code, optimized for your CPU. The list of valid options can be found [here](https://gcc.gnu.org/onlinedocs/gcc/x86-Options.html).
+Zmień wszystkie `-march=native -mtune=native` argumenty w [CMakeLists.txt](https://github.com/explowz/cathook/blob/master/CMakeLists.txt) do `-march=<your cpu-type> -mtune=<your cpu-type>`. This should result in more performant code, optimized for your CPU. The list of valid options can be found [here](https://gcc.gnu.org/onlinedocs/gcc/x86-Options.html).
 
 And simply run the following command while inside the source folder:
 
