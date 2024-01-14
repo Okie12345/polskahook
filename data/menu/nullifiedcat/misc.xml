@@ -1,4 +1,4 @@
-<Tab name="Misc">
+<Tab name="Rozne">
     <TabContainer width="fill" height="fill">
         <Include path="nullifiedcat/misc/general.xml"/>
         <Include path="nullifiedcat/misc/chat.xml"/>
