@@ -67,7 +67,7 @@ if [ "$dialog" == true ] && [ "$exists" == false ]; then
   value=false
   response=255
   while [ "$response" != 0 ] && [ "$response" != 1 ]; do
-    dialog --keep-tite --title "Updater" --yesno "Do you want to enable the cathook auto updater?" 10 25 || {
+    dialog --keep-tite --title "Updater" --yesno "Do you want to enable the polskahook auto updater?" 10 25 || {
       response=$?
       continue
     }
@@ -88,7 +88,7 @@ if [ "$AUTO_UPDATER_ENABLED" == "true" ]; then
   fi
   AUTOUPDATER=true
   tui=false
-  echo -e "\033[1;34m \n \nAuto Updater: Updating cathook in the background\n\033[0m"
+  echo -e "\033[1;34m \n \nAuto Updater: Updating polskahook in the background\n\033[0m"
 fi
 
 function performupdate() {
@@ -113,7 +113,7 @@ function performupdate() {
     git fetch --force --depth 1 origin || {
       echo -e "\033[1;33m\nFailed to pull from github! Trying alternative pull (legacy)\n\033[0m"
       git fetch --depth 1 || {
-        echo -e "\033[1;31m\nFailed to pull from github! A reinstall is recommended. https://github.com/explowz/cathook\n\033[0m"
+        echo -e "\033[1;31m\nFailed to pull from github! A reinstall is recommended. https://github.com/MasterCatPL/polskahook\n\033[0m"
         exit 1
       }
     }
@@ -161,8 +161,8 @@ function performupdate() {
   #Create build folder in case it doesn't exist
   mkdir -p ./build
   # Update cathook
-  pushd build && cmake .. && cmake --build . --target cathook -- -j"$(nproc --all)" || {
-    echo -e "\033[1;31m \n \nFailed to compile cathook\n\033[0m"
+  pushd build && cmake .. && cmake --build . --target polskahook -- -j"$(nproc --all)" || {
+    echo -e "\033[1;31m \n \nFailed to compile polskahook\n\033[0m"
     exit 1
   }
   # Update data
@@ -175,7 +175,7 @@ function performupdate() {
     }
   }
   popd
-  echo -e "\n\033[1;34mCathook updated successfully\n\033[0m"
+  echo -e "\n\033[1;34mPolskahook updated successfully\n\033[0m"
   rm -f ${LOCKFILE}
 }
 

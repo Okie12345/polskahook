@@ -1,3 +1,4 @@
-REPLACE CONTENTS OF THIS FILE WITH ACTUAL KILLSAYS.
-Usable killsay macros: 
-%team% %class% %killer% %name% %myteam% %myclass% \n
+polskahook - free tf2 cheat!
+join us: https://discord.gg/Pn7JhkFMQQ
+GNU/Linux is the best OS!
+polskahook - more fun than a ball of yarn!
