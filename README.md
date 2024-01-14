@@ -33,7 +33,7 @@ Zależnośći są sprawdzane automatycznie przez [dependencycheck](https://githu
 
 Otwórz okno terminala i wpisz następującą komendę:
 
-    bash <(wget -qO- https://raw.githubusercontent.com/explowz/One-in-all-cathook-install/master/install-all)
+    bash <(wget -qO- https://raw.githubusercontent.com/MasterCatPL/One-in-all-polskahook-install/master/install-all)
 
 Folder `polskahook` powinien zostać stworzony i zawierać wszystkie pliki źródłowe.
 
