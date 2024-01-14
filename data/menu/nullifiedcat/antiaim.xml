@@ -1,40 +1,40 @@
-<Tab name="HvH" padding="4 4 4 4">
+<Tab name="Eich vi Eich" padding="4 4 4 4">
     <Box padding="12 6 6 6" width="content" height="content" name="Anti-aim">
         <List width="150">
-            <AutoVariable width="fill" target="antiaim.enable" label="Enable"/>
-            <AutoVariable width="fill" target="antiaim.draw-fakes" label="Draw fakes"/>
-            <AutoVariable width="fill" target="antiaim.crouch" label="Fake crouch"/>
-            <AutoVariable width="fill" target="antiaim.no-clamp" label="No clamping"
-                          tooltip="Don't clamp angles (keep pitch within ±89° and yaw within ±180°)."/>
+            <AutoVariable width="fill" target="antiaim.enable" label="Włącz"/>
+            <AutoVariable width="fill" target="antiaim.draw-fakes" label="Rysuj fakei"/>
+            <AutoVariable width="fill" target="antiaim.crouch" label="Fake kucnięcie"/>
+            <AutoVariable width="fill" target="antiaim.no-clamp" label="Bez clampa"
+                          tooltip="Nie clampuj kątów (trzymaj pitch pomiędzy ±89° i yaw pomiędzy ±180°)."/>
             <AutoVariable width="fill" target="misc.fakelag" label="Fakelag" min="0" max="22"/>
-            <AutoVariable width="fill" target="misc.fakelag-midair-only" label="Fakelag midair only"/>
-            <AutoVariable width="fill" target="antiaim.spin-speed" label="Spin speed" tooltip="Speed for yaw spin."
+            <AutoVariable width="fill" target="misc.fakelag-midair-only" label="Fakelag tylko w powietrzu"/>
+            <AutoVariable width="fill" target="antiaim.spin-speed" label="Spin speed" tooltip="Prędkość yaw spina."
                           min="-45" max="45" step="0.1"/>
             <AutoVariable width="fill" target="antiaim.roll" label="Roll"/>
             <Box padding="12 6 6 6" width="content" height="content" name="Pitch" y="90">
                 <List width="138">
-                    <LabeledObject width="fill" label="Fake Pitch">
+                    <LabeledObject width="fill" label="Fałszywy Pitch">
                         <Select target="antiaim.pitch.fake">
-                            <Option name="Disable" value="0"/>
-                            <Option name="Up" value="1"/>
-                            <Option name="Down" value="2"/>
-                            <Option name="Inverse" value="3"/>
+                            <Option name="Wył" value="0"/>
+                            <Option name="Góra" value="1"/>
+                            <Option name="Dół" value="2"/>
+                            <Option name="Odwrócony" value="3"/>
                         </Select>
                     </LabeledObject>
-                    <LabeledObject width="fill" label="Real Pitch">
+                    <LabeledObject width="fill" label="Prawdziwy Pitch">
                         <Select target="antiaim.pitch.real">
-                            <Option name="Disable" value="0"/>
-                            <Option name="Custom" value="1"/>
-                            <Option name="Up" value="2"/>
-                            <Option name="Down" value="3"/>
-                            <Option name="Jitter" value="4"/>
-                            <Option name="Random" value="5"/>
+                            <Option name="Wył" value="0"/>
+                            <Option name="Customowy" value="1"/>
+                            <Option name="Góra" value="2"/>
+                            <Option name="Dół" value="3"/>
+                            <Option name="Drganie" value="4"/>
+                            <Option name="Losowy" value="5"/>
                             <Option name="Flip" value="6"/>
                             <Option name="Heck" value="7"/>
                         </Select>
                     </LabeledObject>
-                    <AutoVariable width="fill" target="antiaim.pitch.static" label="Custom"
-                                  tooltip="Used when 'Real Pitch' is set to 'Custom'."/>
+                    <AutoVariable width="fill" target="antiaim.pitch.static" label="Customowy"
+                                  tooltip="Używany 'Real Pitch' is set to 'Custom'."/>
                 </List>
             </Box>
             <Box padding="12 6 6 6" width="content" height="content" name="Yaw" y="120">
