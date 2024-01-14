@@ -1,4 +1,4 @@
-<Tab name="Eich vi Eich" padding="4 4 4 4">
+<Tab name="HvH" padding="4 4 4 4">
     <Box padding="12 6 6 6" width="content" height="content" name="Anti-aim">
         <List width="150">
             <AutoVariable width="fill" target="antiaim.enable" label="Wlacz"/>
