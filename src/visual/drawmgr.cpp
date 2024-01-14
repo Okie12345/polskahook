@@ -73,6 +73,7 @@ void DrawCheatVisuals()
                 hack_info_text = "PolskaHook";
                 fonts::center_screen->stringSize(hack_info_text, &w, &h);
                 draw::String(*info_x, *info_y, *info_foreground_color, hack_info_text.c_str(), *fonts::center_screen);
+            }
         }
     }
     if (spectator_target)
