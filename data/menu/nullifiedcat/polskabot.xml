@@ -1,4 +1,4 @@
-<Tab name="Cat-bot">
+<Tab name="Polska-bot">
     <TabContainer width="fill" height="fill">
         <Include path="nullifiedcat/catbot/general.xml"/>
         <Include path="nullifiedcat/catbot/movement.xml"/>
