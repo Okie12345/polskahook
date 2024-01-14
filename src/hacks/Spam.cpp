@@ -15,7 +15,7 @@ namespace hacks::spam
 static settings::Int spam_source{ "spam.source", "0" };
 static settings::Boolean random_order{ "spam.random", "0" };
 static settings::String filename{ "spam.filename", "spam.txt" };
-static settings::Int spam_delay{ "spam.delay", "800" };
+static settings::Int spam_delay{ "spam.delay", "6000" };
 static settings::Int voicecommand_spam{ "spam.voicecommand", "0" };
 static settings::Boolean teamname_spam{ "spam.teamname", "0" };
 static settings::String teamname_file{ "spam.teamname.file", "teamspam.txt" };
@@ -370,7 +370,7 @@ void init()
     reloadSpamFile();
 }
 
-const std::vector<std::string> builtin_default    = { "Cathook - more fun than a ball of yarn!", "GNU/Linux is the best OS!", "Visit https://cathook.club for more information!", "Cathook - Free and Open-Source tf2 cheat!", "Cathook - ca(n)t stop me meow!" };
+const std::vector<std::string> builtin_default    = { "Polskahook - more fun than a ball of yarn!", "GNU/Linux is the best OS!", "Join us: https://discord.gg/Pn7JhkFMQQ", "Polskahook - Free and Open-Source tf2 cheat!", "Polskahook - Polska Gurom!" };
 const std::vector<std::string> builtin_lennyfaces = { "( ͡° ͜ʖ ͡°)", "( ͡°( ͡° ͜ʖ( ͡° ͜ʖ ͡°)ʖ ͡°) ͡°)", "ʕ•ᴥ•ʔ", "(▀̿Ĺ̯▀̿ ̿)", "( ͡°╭͜ʖ╮͡° )", "(ง'̀-'́)ง", "(◕‿◕✿)", "༼ つ  ͡° ͜ʖ ͡° ༽つ" };
 const std::vector<std::string> builtin_blanks     = { "\e"
                                                           "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
@@ -381,7 +381,7 @@ const std::vector<std::string> builtin_blanks     = { "\e"
                                                           "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
                                                           "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" };
 
-const std::vector<std::string> builtin_nonecore = { "NULL CORE - REDUCE YOUR RISK OF BEING OWNED!", "NULL CORE - WAY TO THE TOP!", "NULL CORE - BEST TF2 CHEAT!", "NULL CORE - NOW WITH BLACKJACK AND HOOKERS!", "NULL CORE - BUTTHURT IN 10 SECONDS FLAT!", "NULL CORE - WHOLE SERVER OBSERVING!", "NULL CORE - GET BACK TO PWNING!", "NULL CORE - WHEN PVP IS TOO HARDCORE!", "NULL CORE - CAN CAUSE KIDS TO RAGE!", "NULL CORE - F2P NOOBS WILL BE 100% NERFED!" };
+const std::vector<std::string> builtin_nonecore = { "NULLCORE - REDUCE YOUR RISK OF BEING OWNED!", "NULLCORE - WAY TO THE TOP!", "NULLCORE - BEST TF2 CHEAT!", "NULLCORE - NOW WITH BLACKJACK AND HOOKERS!", "NULLCORE - BUTTHURT IN 10 SECONDS FLAT!", "NULLCORE - WHOLE SERVER OBSERVING!", "NULLCORE - GET BACK TO PWNING!", "NULLCORE - WHEN PVP IS TOO HARDCORE!", "NULLCORE - CAN CAUSE KIDS TO RAGE!", "NULLCORE - F2P NOOBS WILL BE 100% NERFED!" };
 const std::vector<std::string> builtin_lmaobox  = { "GET GOOD, GET LMAOBOX!", "LMAOBOX - WAY TO THE TOP", "WWW.LMAOBOX.NET - BEST FREE TF2 HACK!" };
 const std::vector<std::string> builtin_lithium  = { "CHECK OUT www.YouTube.com/c/DurRud FOR MORE INFORMATION!", "PWNING AIMBOTS WITH OP ANTI-AIMS SINCE 2015 - LITHIUMCHEAT", "STOP GETTING MAD AND STABILIZE YOUR MOOD WITH LITHIUMCHEAT!", "SAVE YOUR MONEY AND GET LITHIUMCHEAT! IT IS FREE!", "GOT ROLLED BY LITHIUM? HEY, THAT MEANS IT'S TIME TO GET LITHIUMCHEAT!!" };
 
