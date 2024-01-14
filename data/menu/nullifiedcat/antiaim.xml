@@ -8,7 +8,7 @@
                           tooltip="Nie clampuj katow (trzymaj pitch pomiedzy ±89° i yaw pomiedzy ±180°)."/>
             <AutoVariable width="fill" target="misc.fakelag" label="Fakelag" min="0" max="22"/>
             <AutoVariable width="fill" target="misc.fakelag-midair-only" label="Fakelag tylko w powietrzu"/>
-            <AutoVariable width="fill" target="antiaim.spin-speed" label="Spin speed" tooltip="Predkosć yaw spina."
+            <AutoVariable width="fill" target="antiaim.spin-speed" label="Spin speed" tooltip="Predkosc yaw spina."
                           min="-45" max="45" step="0.1"/>
             <AutoVariable width="fill" target="antiaim.roll" label="Roll"/>
             <Box padding="12 6 6 6" width="content" height="content" name="Pitch" y="90">
@@ -34,7 +34,7 @@
                         </Select>
                     </LabeledObject>
                     <AutoVariable width="fill" target="antiaim.pitch.static" label="Customowy"
-                                  tooltip="Używany kiedy 'Prawdziwy Pitch' jest ustawiony na 'Customowy'."/>
+                                  tooltip="Uzywany kiedy 'Prawdziwy Pitch' jest ustawiony na 'Customowy'."/>
                 </List>
             </Box>
             <Box padding="12 6 6 6" width="content" height="content" name="Yaw" y="120">
@@ -48,7 +48,7 @@
                             <Option name="Prawo" value="4"/>
                             <Option name="Tyl" value="5"/>
                             <Option name="Krecenie" value="6"/>
-                            <Option name="Krawedź" value="7"/>
+                            <Option name="Krawedz" value="7"/>
                             <Option name="Bokiem" value="8"/>
                             <Option name="losowy2" value="9"/>
                             <Option name="Omega" value="10"/>
@@ -65,7 +65,7 @@
                             <Option name="Prawo" value="4"/>
                             <Option name="Tyl" value="5"/>
                             <Option name="Krecenie" value="6"/>
-                            <Option name="Krawedź" value="7"/>
+                            <Option name="Krawedz" value="7"/>
                             <Option name="Bokiem" value="8"/>
                             <Option name="losowy2" value="9"/>
                             <Option name="Omega" value="10"/>
