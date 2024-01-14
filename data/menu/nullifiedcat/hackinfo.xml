@@ -1,28 +1,28 @@
 <Tab name="Info" padding="4 4 4 4">
     <Box padding="12 6 6 6" width="content" height="content" name="Debug">
-        <List width="167">
-            <AutoVariable width="fill" target="misc.debug-info" label="Debug"/>
-            <AutoVariable width="fill" target="hack.log-console" label="Log debug info"/>
+        <List width="200">
+            <AutoVariable width="fill" target="misc.engine-prediction" label="Prediction silnika"/>
+            <AutoVariable width="fill" target="debug.cursor-fix" label="Fix kursora"/>
             <AutoVariable width="fill" target="debug.engine-pred-others" label="Engine pred others"/>
-            <AutoVariable width="fill" target="debug.join-wait-time" label="Joinspam wait time"/>
-            <AutoVariable width="fill" target="debug.log-dispatch-user-msg" label="Log DUMs" tooltip="Dispatched User Messages."/>
-            <AutoVariable width="fill" target="debug.log-sent-chat" label="Log sent chat"/>
+            <AutoVariable width="fill" target="debug.join-wait-time" label="Czas czekania na joinspam"/>
+            <AutoVariable width="fill" target="debug.log-dispatch-user-msg" label="Zapisuj wiadomosci uzytkownikow"/>
+            <AutoVariable width="fill" target="debug.log-sent-chat" label="Zapisz wyslany czat"/>
             <AutoVariable width="fill" target="debug.pp-extrapolate" label="PP extrapolate"/>
-            <AutoVariable width="fill" target="debug.pp-rocket-time-ping" label="PP rocket time ping"/>
-            <AutoVariable width="fill" target="debug.projectiles" label="Debug projectiles"/>
-            <AutoVariable width="fill" target="debug.tcm" label="Debug TCM"/>
-            <AutoVariable width="fill" target="aimbot.debug" label="Debug aimbot"/>
-            <AutoVariable width="fill" target="aimbot.debug.engine-pp" label="Debug engine PP"/>
+            <AutoVariable width="fill" target="debug.pp-rocket-time-ping" label="czas pingu rakiety PP"/>
+            <AutoVariable width="fill" target="debug.projectiles" label="Debuguj projectile"/>
+            <AutoVariable width="fill" target="debug.tcm" label="Debuguj TCM"/>
+            <AutoVariable width="fill" target="aimbot.debug" label="Debuguj aimbot"/>
+            <AutoVariable width="fill" target="aimbot.debug.engine-pp" label="Debuguj silnik PP"/>
         </List>
     </Box>
-    <Box height="content" width="content" padding="12 6 6 6" name="Cathook" x="180">
+    <Box height="content" width="content" padding="12 6 6 6" name="Polskahook" x="180">
         <List width="150">
-            <AutoVariable width="fill" target="hack.enable" label="Enable Cathook"
-                          tooltip="WARNING: Advanced users only."/>
-            <AutoVariable width="fill" target="hack-info.enable" label="Enable Cathook label"
-                          tooltip="Controls text at top left of screen."/>
-            <AutoVariable width="fill" target="hack-info.minimal" label="Minimal Cathook label"
-                          tooltip="Only show the rainbow text in the label."/>
+            <AutoVariable width="fill" target="hack.enable" label="Wl Polskahook"
+                          tooltip="UWAGA: tylko zaawansowani uzytkownicy."/>
+            <AutoVariable width="fill" target="hack-info.enable" label="Wl etykiete Polskahook"
+                          tooltip="Sterowanie w lewym gornym rogu."/>
+            <AutoVariable width="fill" target="hack-info.minimal" label="Minimalna etykieta Polskahook"
+                          tooltip="Pokazuj tylko teczowy tekst w etykiecie."/>
         </List>
     </Box>
 </Tab>
