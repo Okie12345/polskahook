@@ -11,15 +11,15 @@ Darmowy program do ćwiczenia o otwartym źródle na GNU/Linux do gry **Team For
 ## Spis Treści
 
 - [Spis Treści](#spis-treści)
-- [Jak rozpocząć](#getting-started)
-    - [Zależnośći](#dependencies)
-    - [Pobieranie](#downloading)
-    - [Kompilowanie ze źródła](#compiling-from-source)
-    - [Ładowanie / Injectowanie w proces gry](#loading--injecting-into-game-process)
+- [Jak rozpocząć](#jak-rozpocząć)
+    - [Zależnośći](#zależności)
+    - [Pobieranie](#pobieranie)
+    - [Kompilowanie ze źródła](#kompilowanie-ze-źródła)
+    - [Ładowanie / Injectowanie w proces gry](#Ładowanie--Injectowanie-do-procesu-gry)
 - [FAQ](#faq)
-    - [Jak mogę otworzyć menu?](#how-do-i-open-the-menu)
-    - [Gdzie jest zlokalizowany mój plik cfg?](#where-is-my-config-file-saved)
-    - [Ładowanie / Injectowanie do procesu](#loading--injecting-into-game-process)
+    - [Jak mogę otworzyć menu?](#jak-mogę-otworzyć-menu)
+    - [Gdzie jest zlokalizowany mój plik cfg?](#gdzie-jest-zlokalizowany-mój-plik-cfg)
+    - [Ładowanie / Injectowanie do procesu](#Ładowanie--Injectowanie-do-procesu-gry)
 
 ## Jak rozpocząć
 
@@ -49,7 +49,7 @@ I po prostu uruchom tą komendę kiedy jesteś w folderze z kodem źródłowym:
 
 Jeżeli wszytsko poszło dobrze, powinieneś otrzymać następującą binarkę `libcathook.so`.
 
-### Ładowanie / Injectowanie do procesu
+### Ładowanie / Injectowanie do procesu gry
 
 Uruchom następującą komendę kiedy jesteś w folderze z kodem źródłowym:
 
