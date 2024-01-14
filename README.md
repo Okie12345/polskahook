@@ -10,7 +10,7 @@ Darmowy program do ćwiczenia o otwartym źródle na GNU/Linux do gry **Team For
 
 ## Spis Treści
 
-- [Spis Treści](#table-of-contents)
+- [Spis Treści](#spis-treści)
 - [Jak rozpocząć](#getting-started)
     - [Zależnośći](#dependencies)
     - [Pobieranie](#downloading)
