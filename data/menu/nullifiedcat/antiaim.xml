@@ -69,7 +69,7 @@
                             <Option name="Bokiem" value="8"/>
                             <Option name="losowy2" value="9"/>
                             <Option name="Omega" value="10"/>
-                            <Option name="" value="11"/>
+                            <Option name="losowy" value="11"/>
                             <Option name="Random Clamped" value="12"/>
                         </Select>
                     </LabeledObject>
