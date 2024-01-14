@@ -19,7 +19,7 @@ Darmowy program do ćwiczenia o otwartym źródle na GNU/Linux do gry **Team For
 - [FAQ](#faq)
     - [Jak mogę otworzyć menu?](#jak-mogę-otworzyć-menu)
     - [Gdzie jest zlokalizowany mój plik cfg?](#gdzie-jest-zlokalizowany-mój-plik-cfg)
-    - [Ładowanie / Injectowanie do procesu](#Ładowanie--Injectowanie-do-procesu-gry)
+    - [Ładowanie / Injectowanie do procesu gry](#Ładowanie--Injectowanie-do-procesu-gry)
 
 ## Jak rozpocząć
 
