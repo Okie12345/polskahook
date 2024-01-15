@@ -74,7 +74,7 @@ void dispatchUserMessage(bf_read &buffer, int type)
         // Vote setup Failed
         int reason   = buffer.ReadByte();
         int cooldown = buffer.ReadShort();
-        int delay    = 4;
+        int delay    = 0;
 
         if (reason == 2) // VOTE_FAILED_RATE_EXCEEDED
             delay = cooldown;
@@ -115,21 +115,20 @@ void dispatchUserMessage(bf_read &buffer, int type)
         {
             using namespace playerlist;
 
-            auto &pl             = AccessData(info.friendsID);
-            auto &pl_caller      = AccessData(info2.friendsID);
+            auto &pl        = AccessData(info.friendsID);
+            auto &pl_caller = AccessData(info2.friendsID);
             bool friendly_kicked = pl.state != k_EState::RAGE && pl.state != k_EState::DEFAULT;
             bool friendly_caller = pl_caller.state != k_EState::RAGE && pl_caller.state != k_EState::DEFAULT;
 
             if (*vote_kickn && friendly_kicked)
             {
-                vote_command = { strfmt("vote %d option2", vote_id).get(), 1000u + (rand() % 5000) };
-                vote_command.timer.update();
+                vote_command = { strfmt("vote %d option2", vote_id).get(), 0 };
                 if (*vote_rage_vote && !friendly_caller)
                     pl_caller.state = k_EState::RAGE;
             }
             else if (*vote_kicky && !friendly_kicked)
             {
-                vote_command = { strfmt("vote %d option1", vote_id).get(), 1000u + (rand() % 5000) };
+                vote_command = { strfmt("vote %d option1", vote_id).get(), 0 };
                 vote_command.timer.update();
             }
         }
