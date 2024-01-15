@@ -370,7 +370,7 @@ void init()
     reloadSpamFile();
 }
 
-const std::vector<std::string> builtin_default    = { "Polskahook - more fun than a ball of yarn!", "GNU/Linux is the best OS!", "Join us: https://discord.gg/Pn7JhkFMQQ", "Polskahook - Free and Open-Source tf2 cheat!", "Polskahook - Polska Gurom!" };
+const std::vector<std::string> builtin_default    = { "Polskahook best cheat than cathook!", "GNU/Linux is the best OS!", "Join us: https://discord.gg/Pn7JhkFMQQ", "Polskahook - Free and Open-Source tf2 cheat!", "Polskahook - Polska Gurom!" };
 const std::vector<std::string> builtin_lennyfaces = { "( ͡° ͜ʖ ͡°)", "( ͡°( ͡° ͜ʖ( ͡° ͜ʖ ͡°)ʖ ͡°) ͡°)", "ʕ•ᴥ•ʔ", "(▀̿Ĺ̯▀̿ ̿)", "( ͡°╭͜ʖ╮͡° )", "(ง'̀-'́)ง", "(◕‿◕✿)", "༼ つ  ͡° ͜ʖ ͡° ༽つ" };
 const std::vector<std::string> builtin_blanks     = { "\e"
                                                           "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
