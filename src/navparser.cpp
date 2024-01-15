@@ -182,7 +182,7 @@ class Map : public micropather::Graph
 public:
     CNavFile navfile;
     NavState state;
-    micropather::MicroPather pather{ this, 3000, 6, true };
+    micropather::MicroPather pather{ this, 1500, 6, true };
     std::string mapname;
     std::unordered_map<std::pair<CNavArea *, CNavArea *>, CachedConnection, boost::hash<std::pair<CNavArea *, CNavArea *>>> vischeck_cache;
     std::unordered_map<std::pair<CNavArea *, CNavArea *>, CachedStucktime, boost::hash<std::pair<CNavArea *, CNavArea *>>> connection_stuck_time;
