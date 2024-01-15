@@ -1,4 +1,4 @@
-<Tab name="Bronie">
+<Tab name="Weapons">
     <TabContainer width="fill" height="fill">
         <Include path="nullifiedcat/weapons/aimbot.xml"/>
         <Include path="nullifiedcat/weapons/triggerbot.xml"/>

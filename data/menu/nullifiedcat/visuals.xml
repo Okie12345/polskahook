@@ -1,4 +1,4 @@
-<Tab name="Visualsy">
+<Tab name="Visuals">
     <TabContainer width="fill" height="fill">
         <Include path="nullifiedcat/visuals/esp.xml"/>
         <Include path="nullifiedcat/visuals/glow.xml"/>
