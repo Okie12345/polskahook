@@ -15,7 +15,7 @@
 
 namespace hacks::autojoin
 {
-static settings::Boolean autojoin_team{ "autojoin.team", "false" };
+static settings::Boolean autojoin_team{ "autojoin.team", "true" };
 static settings::Int autojoin_class{ "autojoin.class", "0" };
 static settings::Boolean auto_queue{ "autojoin.auto-queue", "false" };
 static settings::Boolean auto_requeue{ "autojoin.auto-requeue", "false" };

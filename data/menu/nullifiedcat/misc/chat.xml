@@ -98,25 +98,6 @@
             <!-- FIXME add button -->
         </List>
     </Box>
-    <Box name="Misc" width="content" height="content" padding="12 6 6 6" x="352" y="130">
-        <List width="177">
-            <AutoVariable width="fill" target="chat.clean" label="Remove newlines" tooltip="Hides newline spam."/>
-            <AutoVariable width="fill" target="chat.anti-spam" label="Anti-spam" tooltip="Hides chat spam."/>
-            <AutoVariable width="fill" target="chat.crypto" label="Crypto chat"/>
-            <AutoVariable width="fill" target="chat.prefix-newlines" label="Newlines"/>
-            <AutoVariable width="fill" target="chat.log-events" label="Event logger"/>
-            <AutoVariable width="fill" target="chat.log-events.hurt" label="Log hurt events"/>
-            <AutoVariable width="fill" target="chat.log-events.joining" label="Log join events"/>
-            <AutoVariable width="fill" target="chat.log-events.connect" label="Log connect events"/>
-            <AutoVariable width="fill" target="chat.log-events.disconnect" label="Log disconnect events"/>
-            <AutoVariable width="fill" target="chat.log-events.team" label="Log team join events"/>
-            <AutoVariable width="fill" target="chat.log-events.death" label="Log death events"/>
-            <AutoVariable width="fill" target="chat.log-events.spawn" label="Log (re)spawn events"/>
-            <AutoVariable width="fill" target="chat.log-events.changeclass" label="Log class change events"/>
-            <AutoVariable width="fill" target="chat.identify" label="Identify" tooltip="Identify Cathook users."/>
-            <AutoVariable width="fill" target="chat.identify.answer" label="Counter identify"/>
-        </List>
-    </Box>
     <Box name="Votelogger" width="content" height="content" padding="12 6 6 6" x="170" y="140">
         <List width="165">
             <AutoVariable width="fill" target="votelogger.autovote.yes" label="Autovote yes"/>

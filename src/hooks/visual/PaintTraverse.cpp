@@ -13,7 +13,6 @@ static settings::Int software_cursor_mode{ "visual.software-cursor-mode", "0" };
 static settings::Boolean debug_log_panel_names{ "debug.log-panels", "false" };
 
 static settings::Int waittime{ "debug.join-wait-time", "2500" };
-static settings::Boolean no_reportlimit{ "misc.no-report-limit", "false" };
 namespace mchealthbar
 {
 extern settings::Boolean minecraftHP;
@@ -77,12 +76,6 @@ DEFINE_HOOKED_METHOD(PaintTraverse, void, vgui::IPanel *this_, vgui::VPANEL pane
     }
     scndwait++;
     switcherido = !switcherido;
-    if (no_reportlimit && !replaced)
-    {
-        static BytePatch no_report_limit(CSignature::GetClientSignature, "55 89 E5 57 56 53 81 EC ? ? ? ? 8B 5D ? 8B 7D ? 89 D8", 0x75, { 0xB8, 0x01, 0x00, 0x00, 0x00 });
-        no_report_limit.Patch();
-        replaced = true;
-    }
     call_default = true;
     if (isHackActive() && (health_panel || panel_scope || motd_panel || motd_panel_sd) && ((panel == health_panel && mchealthbar::minecraftHP) || (*hacks::catbot::catbotmode && *hacks::catbot::anti_motd && (panel == motd_panel || panel == motd_panel_sd))))
         call_default = false;
