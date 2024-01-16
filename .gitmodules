@@ -6,7 +6,7 @@
 	url = https://github.com/nullworks/libxoverlay
 [submodule "simple-ipc"]
 	path = external/simple-ipc
-	url = https://github.com/nullworks/simple-ipc
+	url = https://github.com/RosneBurgerworks/simple-ipc
 [submodule "external/TF2_NavFile_Reader"]
 	path = external/TF2_NavFile_Reader
 	url = https://github.com/nullworks/TF2_NavFile_Reader
