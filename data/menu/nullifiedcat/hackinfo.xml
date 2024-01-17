@@ -17,9 +17,9 @@
     </Box>
     <Box height="content" width="content" padding="12 6 6 6" name="Polskahook" x="180">
         <List width="150">
-            <AutoVariable width="fill" target="hack.enable" label="Wl Polskahook"
+            <AutoVariable width="fill" target="hack.enable" label="Enable Polskahook"
                           tooltip="UWAGA: tylko zaawansowani uzytkownicy."/>
-            <AutoVariable width="fill" target="hack-info.enable" label="Wl etykiete Polskahook"
+            <AutoVariable width="fill" target="hack-info.enable" label="Minimal Polskahook"
                           tooltip="Sterowanie w lewym gornym rogu."/>
             <AutoVariable width="fill" target="hack-info.minimal" label="Minimalna etykieta Polskahook"
                           tooltip="Pokazuj tylko teczowy tekst w etykiecie."/>

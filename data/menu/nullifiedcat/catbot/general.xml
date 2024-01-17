@@ -18,7 +18,7 @@
                 </Select>
             </LabeledObject>
             <AutoVariable width="fill" target="autotaunt.chance" label="Szansa na autotaunt" min="0" max="100.1" step="1"/>
-            <AutoVariable width="fill" target="autotaunt.safety-distance" label="Dystans bezpiecznego autotaunta"/>
+            <AutoVariable width="fill" target="autotaunt.safety-distance" label="Autotaunt safety distance"/>
             <LabeledObject width="fill" label="Autojoin class" tooltip="Automatycznie wybierz klase.">
                 <Select target="autojoin.class">
                     <Option name="Zadna" value="0"/>
