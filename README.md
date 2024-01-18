@@ -4,7 +4,7 @@
 [![GNU/Linux](https://img.shields.io/badge/platform-GNU%2FLinux-ff69b4?style=flat-square)](https://www.gnu.org/gnu/linux-and-gnu.en.html)
 [![x86](https://img.shields.io/badge/arch-x86-red.svg?style=flat-square)](https://en.wikipedia.org/wiki/X86)
 [![Licencja](https://img.shields.io/github/license/explowz/cathook.svg?style=flat-square)](LICENSE)
-[![Problemy](https://img.shields.io/github/issues/explowz/cathook.svg?style=flat-square)](https://github.com/explowz/cathook/issues)
+[![Problemy](https://img.shields.io/github/issues/explowz/cathook.svg?style=flat-square)](https://github.com/MasterCatPL/polskahook/issues)
 
 Darmowy program do ćwiczenia o otwartym źródle na GNU/Linux do gry **Team Fortress 2**. Zaprojektowany jako internal cheat - [Wspólna Biblioteka](https://en.wikipedia.org/wiki/Library_(computing)#Shared_libraries) (SO) ładowany do procesu gry. Kompatybilny ze Steamową wersją gry.
 
