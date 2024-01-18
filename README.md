@@ -62,7 +62,7 @@ Kiedy zainjectowany, klawisz `INSERT` uruchamia menu.
 ## FAQ
 
 ### Jak mogę otworzyć menu?
-Naciśnij klawisz <kbd>INSERT</kbd> kiedy w oknie TF2.
+Naciśnij klawisz <kbd>INSERT</kbd>
 
 ### Gdzie jest zlokalizowany mój plik cfg?
 Pliki konfiguracyjne są zlokalizowane w folderze `cathook` który jest zlokalizowany w folderze `opt` (`/opt/cathook/data`). Plik cfg jest czytelny dla człowieka i może być edytowany w edytorze tekstu twojego wyboru.
