@@ -48,7 +48,7 @@ void BeginConVars()
                                      "engine_no_focus_sleep 0\n"
                                      "hud_fastswitch 1\n"
                                      "tf_medigun_autoheal 1\n"
-                                     "fps_max 67\n"
+                                     "fps_max 30\n"
                                      "cat_ipc_connect";
 
         cfg_autoexec_textmode.close();
