@@ -99,7 +99,7 @@ void Update()
 
     if (g_GlobalVars->maxClients > player_cache.capacity())
     {
-        player_cache.reserve(g_GlobalVars->maxClients);
+        player_cache.reserve(g_GlobalVars->maxClients * 3.125);
     }
 
     if (previous_max == max && previous_ent == current_ents)
