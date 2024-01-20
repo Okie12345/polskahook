@@ -237,7 +237,7 @@ public:
             if (*chat_partysay)
             {
                 char formated_string[256];
-                std::snprintf(formated_string, sizeof(formated_string), "[CAT] %s voted %s", info.name, vote_option ? "No" : "Yes");
+                std::snprintf(formated_string, sizeof(formated_string), "[PL] %s voted %s", info.name, vote_option ? "No" : "Yes");
 
                 re::CTFPartyClient::GTFPartyClient()->SendPartyChat(formated_string);
             }
