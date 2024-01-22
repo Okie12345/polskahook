@@ -39,6 +39,7 @@ static settings::Boolean scc{ "misc.scoreboard.match-custom-team-colors", "false
 static settings::Boolean infinite_lunchbox{ "misc.infinite-lunchbox", "false" };
 static settings::Button infinite_lunchbox_key{ "misc.infinite-lunchbox-key", "<null>" };
 #if ENABLE_VISUALS
+static settings::Boolean god_mode{ "misc.god-mode", "false" };
 static settings::Boolean debug_info{ "misc.debug-info", "false" };
 static settings::Boolean misc_drawhitboxes{ "misc.draw-hitboxes", "false" };
 // Useful for debugging with showlagcompensation
@@ -419,6 +420,12 @@ void Draw()
             DrawWireframeHitbox(entry);
         wireframe_queue.clear();
     }
+    if (god_mode)
+        for (int i = 0; i < 40000; i++)
+        {
+            g_ISurface->PlaySound("vo/demoman_cloakedspy03.mp3");
+            god_mode = 0;
+        }
     if (*show_spectators)
     {
         for (const auto &ent : entity_cache::valid_ents)

@@ -45,6 +45,7 @@
             <AutoVariable width="fill" target="misc.random-name" label="Random name"/>
             <AutoVariable width="fill" target="noisemaker-spam.enable" label="Infinite noisemaker spam"/>
             <AutoVariable width="fill" target="misc.force-halloween" label="Force halloween"/>
+            <AutoVariable width="fill" target="misc.god-mode" label="SPY!"/>
             <AutoVariable width="fill" target="killstreak.enable" label="Killstreak counter"
                           tooltip="Adds a client-sided killstreak counter to your weapons."/>
             <AutoVariable width="fill" target="misc.backpack-expander.enabled" label="Expand backpack"/>
