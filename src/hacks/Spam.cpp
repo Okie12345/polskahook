@@ -230,7 +230,7 @@ bool FormatSpamMessage(std::string &message)
 }
 
 // What to spam
-static std::vector<std::string> teamspam_text = { "CAT", "HOOK" };
+static std::vector<std::string> teamspam_text = { "POLSKA", "HOOK" };
 // Current spam index
 static size_t current_teamspam_idx = 0;
 
@@ -324,6 +324,9 @@ static void CreateMove()
     case 7:
         source = &builtin_lithium;
         break;
+    case 8:
+        source = &builtin_cowhook;
+        break;
     default:
         return;
     }
@@ -384,6 +387,7 @@ const std::vector<std::string> builtin_blanks     = { "\e"
 const std::vector<std::string> builtin_nonecore = { "NULLCORE - REDUCE YOUR RISK OF BEING OWNED!", "NULLCORE - WAY TO THE TOP!", "NULLCORE - BEST TF2 CHEAT!", "NULLCORE - NOW WITH BLACKJACK AND HOOKERS!", "NULLCORE - BUTTHURT IN 10 SECONDS FLAT!", "NULLCORE - WHOLE SERVER OBSERVING!", "NULLCORE - GET BACK TO PWNING!", "NULLCORE - WHEN PVP IS TOO HARDCORE!", "NULLCORE - CAN CAUSE KIDS TO RAGE!", "NULLCORE - F2P NOOBS WILL BE 100% NERFED!" };
 const std::vector<std::string> builtin_lmaobox  = { "GET GOOD, GET LMAOBOX!", "LMAOBOX - WAY TO THE TOP", "WWW.LMAOBOX.NET - BEST FREE TF2 HACK!" };
 const std::vector<std::string> builtin_lithium  = { "CHECK OUT www.YouTube.com/c/DurRud FOR MORE INFORMATION!", "PWNING AIMBOTS WITH OP ANTI-AIMS SINCE 2015 - LITHIUMCHEAT", "STOP GETTING MAD AND STABILIZE YOUR MOOD WITH LITHIUMCHEAT!", "SAVE YOUR MONEY AND GET LITHIUMCHEAT! IT IS FREE!", "GOT ROLLED BY LITHIUM? HEY, THAT MEANS IT'S TIME TO GET LITHIUMCHEAT!!" };
+const std::vector<std::string> builtin_cowhook    = { "COWHOOK.FUN", "#SafeTF2", "TF2 IS SAVED", "GO TO COWHOOK.FUN", };
 
 void teamspam_reload(const std::string &after)
 {
