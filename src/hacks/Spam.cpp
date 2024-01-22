@@ -384,6 +384,7 @@ const std::vector<std::string> builtin_blanks     = { "\e"
 const std::vector<std::string> builtin_nonecore = { "NULLCORE - REDUCE YOUR RISK OF BEING OWNED!", "NULLCORE - WAY TO THE TOP!", "NULLCORE - BEST TF2 CHEAT!", "NULLCORE - NOW WITH BLACKJACK AND HOOKERS!", "NULLCORE - BUTTHURT IN 10 SECONDS FLAT!", "NULLCORE - WHOLE SERVER OBSERVING!", "NULLCORE - GET BACK TO PWNING!", "NULLCORE - WHEN PVP IS TOO HARDCORE!", "NULLCORE - CAN CAUSE KIDS TO RAGE!", "NULLCORE - F2P NOOBS WILL BE 100% NERFED!" };
 const std::vector<std::string> builtin_lmaobox  = { "GET GOOD, GET LMAOBOX!", "LMAOBOX - WAY TO THE TOP", "WWW.LMAOBOX.NET - BEST FREE TF2 HACK!" };
 const std::vector<std::string> builtin_lithium  = { "CHECK OUT www.YouTube.com/c/DurRud FOR MORE INFORMATION!", "PWNING AIMBOTS WITH OP ANTI-AIMS SINCE 2015 - LITHIUMCHEAT", "STOP GETTING MAD AND STABILIZE YOUR MOOD WITH LITHIUMCHEAT!", "SAVE YOUR MONEY AND GET LITHIUMCHEAT! IT IS FREE!", "GOT ROLLED BY LITHIUM? HEY, THAT MEANS IT'S TIME TO GET LITHIUMCHEAT!!" };
+//const std::vector<std::string> builtin_cathook    = { "Cathook - more fun than a ball of yarn!", "Cathook - ca(n)t stop me meow!" };
 
 void teamspam_reload(const std::string &after)
 {
