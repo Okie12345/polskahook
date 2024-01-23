@@ -374,7 +374,7 @@ const std::vector<std::string> builtin_lennyfaces = { "( ͡° ͜ʖ ͡°)", "( ͡
 const std::vector<std::string> builtin_nonecore = { "NULLCORE - REDUCE YOUR RISK OF BEING OWNED!", "NULLCORE - WAY TO THE TOP!", "NULLCORE - BEST TF2 CHEAT!", "NULLCORE - NOW WITH BLACKJACK AND HOOKERS!", "NULLCORE - BUTTHURT IN 10 SECONDS FLAT!", "NULLCORE - WHOLE SERVER OBSERVING!", "NULLCORE - GET BACK TO PWNING!", "NULLCORE - WHEN PVP IS TOO HARDCORE!", "NULLCORE - CAN CAUSE KIDS TO RAGE!", "NULLCORE - F2P NOOBS WILL BE 100% NERFED!" };
 const std::vector<std::string> builtin_lmaobox  = { "GET GOOD, GET LMAOBOX!", "LMAOBOX - WAY TO THE TOP", "WWW.LMAOBOX.NET - BEST FREE TF2 HACK!" };
 const std::vector<std::string> builtin_cowhook = { "COWHOOK.FUN", "#SafeTF2", "TF2 IS SAVED", "GO TO COWHOOK.FUN", };
-const std::vector<std::string> builtin_rosnehook = { "Rosnehook - BONES? well yes", "Rosnehook: We Love Bones!", "Rosnehook: Never Miss!", "Rosnehook: Darkstorm Code? No!", "Rosnehook: so private that valve will rat your pc just to check rosnehook code!", "Rosnehook: No Bloatware!", "Rosnehook: furry and pedo killer!", "Rosnehook: What is VAC?" };
+const std::vector<std::string> builtin_rosnehook = { "Rosnehook - BONES? well yes", "Rosnehook: We Love Bones!", "Rosnehook: Never Miss!", "Rosnehook: Darkstorm Code? No!", "Rosnehook: so private that valve will rat your pc just to check rosnehook code!", "Rosnehook: No Bloatware!", "Rosnehook: furry and pedo killer!", "Rosnehook: What is VAC?", };
 void teamspam_reload(const std::string &after)
 {
     // Clear spam vector
