@@ -323,6 +323,7 @@ static void CreateMove()
         break;
     case 7:
         source = &builtin_rosnehook;
+        break;
     default:
         return;
     }
