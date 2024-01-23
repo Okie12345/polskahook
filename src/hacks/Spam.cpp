@@ -313,17 +313,12 @@ static void CreateMove()
         source = &builtin_lennyfaces;
         break;
     case 4:
-        source = &builtin_blanks;
-        break;
-    case 5:
         source = &builtin_nonecore;
         break;
-    case 6:
+    case 5:
         source = &builtin_lmaobox;
         break;
-    case 7:
-        source = &builtin_lithium;
-    case 8:
+    case 6:
         source = &builtin_cowhook;
         break;
     default:
@@ -374,18 +369,8 @@ void init()
 
 const std::vector<std::string> builtin_default    = { "Polskahook best cheat than cathook!", "GNU/Linux is the best OS!", "Join us: https://discord.gg/Pn7JhkFMQQ", "Polskahook - Free and Open-Source tf2 cheat!", "Polskahook - Polska Gurom!" };
 const std::vector<std::string> builtin_lennyfaces = { "( ͡° ͜ʖ ͡°)", "( ͡°( ͡° ͜ʖ( ͡° ͜ʖ ͡°)ʖ ͡°) ͡°)", "ʕ•ᴥ•ʔ", "(▀̿Ĺ̯▀̿ ̿)", "( ͡°╭͜ʖ╮͡° )", "(ง'̀-'́)ง", "(◕‿◕✿)", "༼ つ  ͡° ͜ʖ ͡° ༽つ" };
-const std::vector<std::string> builtin_blanks     = { "\e"
-                                                          "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
-                                                          "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
-                                                          "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
-                                                          "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
-                                                          "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
-                                                          "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
-                                                          "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" };
-
 const std::vector<std::string> builtin_nonecore = { "NULLCORE - REDUCE YOUR RISK OF BEING OWNED!", "NULLCORE - WAY TO THE TOP!", "NULLCORE - BEST TF2 CHEAT!", "NULLCORE - NOW WITH BLACKJACK AND HOOKERS!", "NULLCORE - BUTTHURT IN 10 SECONDS FLAT!", "NULLCORE - WHOLE SERVER OBSERVING!", "NULLCORE - GET BACK TO PWNING!", "NULLCORE - WHEN PVP IS TOO HARDCORE!", "NULLCORE - CAN CAUSE KIDS TO RAGE!", "NULLCORE - F2P NOOBS WILL BE 100% NERFED!" };
 const std::vector<std::string> builtin_lmaobox  = { "GET GOOD, GET LMAOBOX!", "LMAOBOX - WAY TO THE TOP", "WWW.LMAOBOX.NET - BEST FREE TF2 HACK!" };
-const std::vector<std::string> builtin_lithium  = { "CHECK OUT www.YouTube.com/c/DurRud FOR MORE INFORMATION!", "PWNING AIMBOTS WITH OP ANTI-AIMS SINCE 2015 - LITHIUMCHEAT", "STOP GETTING MAD AND STABILIZE YOUR MOOD WITH LITHIUMCHEAT!", "SAVE YOUR MONEY AND GET LITHIUMCHEAT! IT IS FREE!", "GOT ROLLED BY LITHIUM? HEY, THAT MEANS IT'S TIME TO GET LITHIUMCHEAT!!" };
 const std::vector<std::string> builtin_cowhook = { "COWHOOK.FUN", "#SafeTF2", "TF2 IS SAVED", "GO TO COWHOOK.FUN", };
 void teamspam_reload(const std::string &after)
 {

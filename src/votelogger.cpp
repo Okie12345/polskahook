@@ -17,6 +17,7 @@ static settings::Boolean vote_rage_vote{ "votelogger.autovote.no.rage", "false" 
 static settings::Boolean chat{ "votelogger.chat", "true" };
 static settings::Boolean chat_partysay{ "votelogger.chat.partysay", "false" };
 static settings::Boolean chat_casts{ "votelogger.chat.casts", "false" };
+static settings::Boolean saywhenimkicking{ "votelogger.kicksay", "false" };
 static settings::Boolean chat_casts_f1_only{ "votelogger.chat.casts.f1-only", "true" };
 // Leave party and crash, useful for personal party bots
 static settings::Boolean abandon_and_crash_on_kick{ "votelogger.restart-on-kick", "false" };
@@ -107,6 +108,10 @@ void dispatchUserMessage(bf_read &buffer, int type)
         logging::Info("[%s] Vote called to kick %s [U:1:%u] for %s by %s [U:1:%u]", team_name, info.name, info.friendsID, reason, info2.name, info2.friendsID);
         if (info.friendsID == g_ISteamUser->GetSteamID().GetAccountID())
         {
+            if (*saywhenimkicking)
+            {
+                chat_stack::Say("F1, get this bot outta here!");
+            }
             was_local_player = true;
             local_kick_timer.update();
         }
