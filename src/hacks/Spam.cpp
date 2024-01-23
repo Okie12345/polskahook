@@ -15,7 +15,7 @@ namespace hacks::spam
 static settings::Int spam_source{ "spam.source", "0" };
 static settings::Boolean random_order{ "spam.random", "0" };
 static settings::String filename{ "spam.filename", "spam.txt" };
-static settings::Int spam_delay{ "spam.delay", "6000" };
+static settings::Int spam_delay{ "spam.delay", "6500" };
 static settings::Int voicecommand_spam{ "spam.voicecommand", "0" };
 static settings::Boolean teamname_spam{ "spam.teamname", "0" };
 static settings::String teamname_file{ "spam.teamname.file", "teamspam.txt" };
@@ -323,6 +323,8 @@ static void CreateMove()
         break;
     case 7:
         source = &builtin_lithium;
+    case 8:
+        source = &builtin_cowhook;
         break;
     default:
         return;
@@ -384,8 +386,7 @@ const std::vector<std::string> builtin_blanks     = { "\e"
 const std::vector<std::string> builtin_nonecore = { "NULLCORE - REDUCE YOUR RISK OF BEING OWNED!", "NULLCORE - WAY TO THE TOP!", "NULLCORE - BEST TF2 CHEAT!", "NULLCORE - NOW WITH BLACKJACK AND HOOKERS!", "NULLCORE - BUTTHURT IN 10 SECONDS FLAT!", "NULLCORE - WHOLE SERVER OBSERVING!", "NULLCORE - GET BACK TO PWNING!", "NULLCORE - WHEN PVP IS TOO HARDCORE!", "NULLCORE - CAN CAUSE KIDS TO RAGE!", "NULLCORE - F2P NOOBS WILL BE 100% NERFED!" };
 const std::vector<std::string> builtin_lmaobox  = { "GET GOOD, GET LMAOBOX!", "LMAOBOX - WAY TO THE TOP", "WWW.LMAOBOX.NET - BEST FREE TF2 HACK!" };
 const std::vector<std::string> builtin_lithium  = { "CHECK OUT www.YouTube.com/c/DurRud FOR MORE INFORMATION!", "PWNING AIMBOTS WITH OP ANTI-AIMS SINCE 2015 - LITHIUMCHEAT", "STOP GETTING MAD AND STABILIZE YOUR MOOD WITH LITHIUMCHEAT!", "SAVE YOUR MONEY AND GET LITHIUMCHEAT! IT IS FREE!", "GOT ROLLED BY LITHIUM? HEY, THAT MEANS IT'S TIME TO GET LITHIUMCHEAT!!" };
-//const std::vector<std::string> builtin_cathook    = { "Cathook - more fun than a ball of yarn!", "Cathook - ca(n)t stop me meow!" };
-
+const std::vector<std::string> builtin_cowhook = { "COWHOOK.FUN", "#SafeTF2", "TF2 IS SAVED", "GO TO COWHOOK.FUN", };
 void teamspam_reload(const std::string &after)
 {
     // Clear spam vector
