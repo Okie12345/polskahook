@@ -367,7 +367,7 @@ void init()
     reloadSpamFile();
 }
 
-const std::vector<std::string> builtin_default    = { "Polskahook best cheat than cathook!", "GNU/Linux is the best OS!", "Join us: https://discord.gg/Pn7JhkFMQQ", "Polskahook - Free and Open-Source tf2 cheat!", "Polskahook - Polska Gurom!" };
+const std::vector<std::string> builtin_default    = { "Polskahook best cheat than cathook!", "GNU/Linux is the best OS!", "Join us: https://discord.gg/YXnT7YcGBr", "Polskahook - Free and Open-Source tf2 cheat!", "Polskahook - Polska Gurom!" };
 const std::vector<std::string> builtin_lennyfaces = { "( ͡° ͜ʖ ͡°)", "( ͡°( ͡° ͜ʖ( ͡° ͜ʖ ͡°)ʖ ͡°) ͡°)", "ʕ•ᴥ•ʔ", "(▀̿Ĺ̯▀̿ ̿)", "( ͡°╭͜ʖ╮͡° )", "(ง'̀-'́)ง", "(◕‿◕✿)", "༼ つ  ͡° ͜ʖ ͡° ༽つ" };
 const std::vector<std::string> builtin_nonecore = { "NULLCORE - REDUCE YOUR RISK OF BEING OWNED!", "NULLCORE - WAY TO THE TOP!", "NULLCORE - BEST TF2 CHEAT!", "NULLCORE - NOW WITH BLACKJACK AND HOOKERS!", "NULLCORE - BUTTHURT IN 10 SECONDS FLAT!", "NULLCORE - WHOLE SERVER OBSERVING!", "NULLCORE - GET BACK TO PWNING!", "NULLCORE - WHEN PVP IS TOO HARDCORE!", "NULLCORE - CAN CAUSE KIDS TO RAGE!", "NULLCORE - F2P NOOBS WILL BE 100% NERFED!" };
 const std::vector<std::string> builtin_lmaobox  = { "GET GOOD, GET LMAOBOX!", "LMAOBOX - WAY TO THE TOP", "WWW.LMAOBOX.NET - BEST FREE TF2 HACK!" };
