@@ -18,6 +18,7 @@ extern const std::vector<std::string> builtin_lennyfaces;
 extern const std::vector<std::string> builtin_nonecore;
 extern const std::vector<std::string> builtin_lmaobox;
 extern const std::vector<std::string> builtin_cowhook;
+extern const std::vector<std::string> builtin_rosnehook;
 
 bool isActive();
 void init();
