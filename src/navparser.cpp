@@ -23,8 +23,8 @@
 #if ENABLE_VISUALS
 #include "drawing.hpp"
 #endif
-
-#include <memory>
+#include "MiscAimbot.hpp"
+#include <memory>                                       
 #include <boost/container_hash/hash.hpp>
 
 namespace navparser
@@ -34,13 +34,13 @@ static settings::Boolean draw("nav.draw", "false");
 static settings::Boolean look{ "nav.look-at-path", "false" };
 static settings::Boolean draw_debug_areas("nav.draw.debug-areas", "false");
 static settings::Boolean log_pathing{ "nav.log", "false" };
-static settings::Int stuck_time{ "nav.stuck-time", "1000" };
+static settings::Int stuck_time{ "nav.stuck-time", "750" };
 static settings::Int vischeck_cache_time{ "nav.vischeck-cache.time", "240" };
 static settings::Boolean vischeck_runtime{ "nav.vischeck-runtime.enabled", "true" };
 static settings::Int vischeck_time{ "nav.vischeck-runtime.delay", "2000" };
-static settings::Int stuck_detect_time{ "nav.anti-stuck.detection-time", "5" };
+static settings::Int stuck_detect_time{ "nav.anti-stuck.detection-time", "6" };
 // How long until accumulated "Stuck time" expires
-static settings::Int stuck_expire_time{ "nav.anti-stuck.expire-time", "10" };
+static settings::Int stuck_expire_time{ "nav.anti-stuck.expire-time", "5" };
 // How long we should blacklist the node after being stuck for too long?
 static settings::Int stuck_blacklist_time{ "nav.anti-stuck.blacklist-time", "120" };
 static settings::Int sticky_ignore_time{ "nav.ignore.sticky-time", "15" };
@@ -56,7 +56,6 @@ static bool CastRay(Vector origin, Vector endpos, unsigned mask, ITraceFilter *f
     // This was found to be So inefficient that it is literally unusable for our purposes. it is almost 1000x slower than the above.
     // ray.Init(origin, target, -right * HALF_PLAYER_WIDTH, right * HALF_PLAYER_WIDTH);
 
-    PROF_SECTION(IEVV_TraceRay)
     g_ITrace->TraceRay(ray, mask, filter, &trace);
 
     return trace.DidHit();
@@ -182,7 +181,7 @@ class Map : public micropather::Graph
 public:
     CNavFile navfile;
     NavState state;
-    micropather::MicroPather pather{ this, 1500, 6, true };
+    micropather::MicroPather pather{ this, 3000, 6, true };
     std::string mapname;
     std::unordered_map<std::pair<CNavArea *, CNavArea *>, CachedConnection, boost::hash<std::pair<CNavArea *, CNavArea *>>> vischeck_cache;
     std::unordered_map<std::pair<CNavArea *, CNavArea *>, CachedStucktime, boost::hash<std::pair<CNavArea *, CNavArea *>>> connection_stuck_time;
@@ -358,9 +357,6 @@ public:
                 continue;
             if (is_sentry)
             {
-                // Should we even ignore the sentry?
-                if (CE_INT(ent, netvar.m_iSentryState) == SENTRY_STATE_INACTIVE)
-                    continue;
                 // Soldier/Heavy do not care about Level 1 or mini sentries
                 bool is_strong_class = g_pLocalPlayer->clazz == tf_heavy || g_pLocalPlayer->clazz == tf_soldier;
                 int bullet           = CE_INT(ent, netvar.m_iAmmoShells);
@@ -510,10 +506,9 @@ bool navTo(const Vector &destination, int priority, bool should_repath, bool nav
         path.erase(path.begin());
     crumbs.clear();
 
-    for (size_t i = 0; i < path.size(); i++)
+    for (size_t i = 0; i < path.size(); ++i)
     {
         auto *area = reinterpret_cast<CNavArea *>(path.at(i));
-
         // All entries besides the last need an extra crumb
         if (i != path.size() - 1)
         {
@@ -670,51 +665,38 @@ static void followCrumbs()
     // 1. No jumping if zoomed (or revved)
     // 2. Jump if it's necessary to do so based on z values
     // 3. Jump if stuck (not getting closer) for more than stuck_time/2
-    if ((!(g_pLocalPlayer->holding_sniper_rifle && g_pLocalPlayer->bZoomed) && !(g_pLocalPlayer->bRevved || g_pLocalPlayer->bRevving) && (crouch || crumbs[0].vec.z - g_pLocalPlayer->v_Origin.z > 18.0f) && last_jump.check(200)) || (last_jump.check(200) && inactivity.check(*stuck_time / 2)))
-    {
+if ((!(g_pLocalPlayer->holding_sniper_rifle && g_pLocalPlayer->bZoomed) && !(g_pLocalPlayer->bRevved || g_pLocalPlayer->bRevving) || crumbs[0].vec.z - g_pLocalPlayer->v_Origin.z > 18.0f) && last_jump.check(200) && inactivity.check(*stuck_time / 2))    {
         auto local = map->findClosestNavSquare(g_pLocalPlayer->v_Origin);
         // Check if current area allows jumping
         if (!local || !(local->m_attributeFlags & (NAV_MESH_NO_JUMP | NAV_MESH_STAIRS)))
         {
             // Make it crouch until we land, but jump the first tick
-            current_user_cmd->buttons |= crouch ? IN_DUCK : IN_JUMP;
+            current_user_cmd->buttons |=    IN_JUMP;
 
-            // Only flip to crouch state, not to jump state
-            if (!crouch)
-            {
-                crouch           = true;
-                ticks_since_jump = 0;
-            }
-            ticks_since_jump++;
 
-            // Update jump timer now since we are back on ground
-            if (crouch && g_pLocalPlayer->flags & FL_ONGROUND && ticks_since_jump > 3)
+
+
             {
                 // Reset
-                crouch = false;
                 last_jump.update();
             }
         }
     }
 
-    /*if (inactivity.check(*stuck_time) || (inactivity.check(*unreachable_time) && !IsVectorVisible(g_pLocalPlayer->v_Origin, *crumb_vec + Vector(.0f, .0f, 41.5f), false, LOCAL_E, MASK_PLAYERSOLID)))
-    {
-        if (crumbs[0].navarea)
-            ignoremanager::addTime(last_area, *crumb, inactivity);
-        repath();
-        return;
-    }*/
 
-    // Look at path
-    if (*look && !hacks::aimbot::IsAiming())
+// Look at path
+    if (look && !hacks::aimbot::IsAiming())
     {
         Vector next{ crumbs[0].vec.x, crumbs[0].vec.y, g_pLocalPlayer->v_Eye.z };
         next = GetAimAtAngles(g_pLocalPlayer->v_Eye, next);
-
+        static int wait_time = 0;
+        static int aim_speed = 20;
+         // Slow aim to smoothen
+        hacks::misc_aimbot::DoSlowAim(next, aim_speed);
         current_user_cmd->viewangles = next;
     }
 
-    WalkTo(current_vec);
+    WalkTo(crumbs[0].vec);
 }
 
 static Timer vischeck_timer{};
@@ -830,16 +812,15 @@ static void CreateMove()
     if (!isReady())
         return;
 
-    if (CE_BAD(LOCAL_E) || !g_pLocalPlayer->alive)
+        if (CE_BAD(LOCAL_E) || !LOCAL_E->m_bAlivePlayer())
     {
         cancelPath();
         return;
     }
 
-    // Still in setup or waiting for players. If on fitting team, do not path yet
+    // Still in setup If on fitting team, do not path yet
     std::string level_name = GetLevelName();
-    if (g_pLocalPlayer->team == TEAM_BLU && (TFGameRules()->InSetup() && level_name != "plr_pipeline" || TFGameRules()->IsInWaitingForPlayers() && (level_name.starts_with("pl_") || level_name.starts_with("cp_"))))
-    {
+if (g_pLocalPlayer->team == TEAM_BLU && (g_pGameRules->m_bInSetup && level_name != "plr_pipeline" && (level_name.starts_with("pl_") || level_name.starts_with("cp_"))))    {
         if (navparser::NavEngine::isPathing())
             navparser::NavEngine::cancelPath();
         return;
@@ -942,7 +923,7 @@ void Draw()
 {
     if (!isReady() || !*draw)
         return;
-    if (*draw_debug_areas && CE_GOOD(LOCAL_E) && g_pLocalPlayer->alive)
+    if (*draw_debug_areas && CE_GOOD(LOCAL_E) && LOCAL_E->m_bAlivePlayer())
     {
         auto area = map->findClosestNavSquare(g_pLocalPlayer->v_Origin);
         auto edge = area->getNearestPoint(g_pLocalPlayer->v_Origin.AsVector2D());

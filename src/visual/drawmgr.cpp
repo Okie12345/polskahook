@@ -6,7 +6,6 @@
  */
 
 #include <MiscTemporary.hpp>
-#include <hacks/Aimbot.hpp>
 #include <hacks/hacklist.hpp>
 #if ENABLE_IMGUI_DRAWING
 #include "imgui/imrenderer.hpp"
@@ -16,28 +15,23 @@
 #include <glez/draw.hpp>
 #endif
 #include <settings/Bool.hpp>
-#include <settings/Float.hpp>
-#include <settings/Rgba.hpp>
 #include <menu/GuiInterface.hpp>
 #include "common.hpp"
 #include "visual/drawing.hpp"
-#include "menu/menu/Menu.hpp"
+#include "hack.hpp"
 #include "drawmgr.hpp"
 
 static settings::Boolean info_text{ "hack-info.enable", "true" };
 
-void render_cheat_visuals()
+void RenderCheatVisuals()
 {
     {
-        PROF_SECTION(BeginCheatVisuals);
         BeginCheatVisuals();
     }
     {
-        PROF_SECTION(DrawCheatVisuals);
         DrawCheatVisuals();
     }
     {
-        PROF_SECTION(EndCheatVisuals);
         EndCheatVisuals();
     }
 }
@@ -59,47 +53,30 @@ void BeginCheatVisuals()
     ResetStrings();
 }
 
-
-double getRandom(double lower_bound, double upper_bound)
-{
-    std::uniform_real_distribution<double> unif(lower_bound, upper_bound);
-    static std::mt19937 rand_engine(std::time(nullptr));
-
-    double x = unif(rand_engine);
-    return x;
-}
-
 void DrawCheatVisuals()
 {
     {
-        PROF_SECTION(DRAW_info);
-        std::string name_s, reason_s;
-        PROF_SECTION(PT_info_text);
-        if (info_text)
+        if (*info_text)
         {
             auto color = colors::white;
             AddSideString("PolskaHook", color);
-        }
-    }
+          } 
+      }
     if (spectator_target)
-    {
         AddCenterString("Press SPACE to stop spectating");
-    }
-    {
-        PROF_SECTION(DRAW_WRAPPER);
-        EC::run(EC::Draw);
-    }
-    if (CE_GOOD(g_pLocalPlayer->entity) && !g_Settings.bInvalid)
-    {
-        Prediction_PaintTraverse();
-    }
-    {
-        PROF_SECTION(DRAW_strings);
-        DrawStrings();
-    }
+
 #if ENABLE_GUI
     {
-        PROF_SECTION(DRAW_GUI);
+        gui::draw();
+    }
+#endif
+    if (spectator_target)
+        AddCenterString("Press SPACE to stop spectating");
+        EC::run(EC::Draw);
+        DrawStrings();
+
+#if ENABLE_GUI
+    {
         gui::draw();
     }
 #endif
