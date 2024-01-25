@@ -50,7 +50,7 @@
             <AutoVariable width="fill" target="votelogger.kicksay" label="F1 votekick"
                           tooltip="Says 'F1, get this bot outta here!' in chat when starting a votekick."/>
                           <AutoVariable width="fill" target="votelogger.f2please" label="F2 PLEASE"
-                          tooltip="Says 'f2 bro wtf' in chat when being votekicked."/>
+                          tooltip="Says 'f2 i'm not a bot' in chat when being votekicked."/>
         </List>
     </Box>
     <Box name="Killsay" width="177" height="content" padding="12 6 6 6" x="170">

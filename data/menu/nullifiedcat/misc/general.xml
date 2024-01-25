@@ -16,6 +16,7 @@
             <AutoVariable width="fill" target="misc.no-push" label="No push"/>
             <AutoVariable width="fill" target="misc.anti-afk" label="Anti AFK"/>
             <AutoVariable width="fill" target="misc.no-lerp" label="No lerp"/>
+            <AutoVariable width="fill" target="misc.god-mode" label="SPY!"/>
             <AutoVariable width="fill" target="misc.roll-speedhack" label="Moonwalk"
                           tooltip="Increase crouched movement speed."/>
             <AutoVariable width="fill" target="misc.roll-speedhack.forward" label="Moonwalk forwards"/>
@@ -45,7 +46,6 @@
             <AutoVariable width="fill" target="misc.random-name" label="Random name"/>
             <AutoVariable width="fill" target="noisemaker-spam.enable" label="Infinite noisemaker spam"/>
             <AutoVariable width="fill" target="misc.force-halloween" label="Force halloween"/>
-            <AutoVariable width="fill" target="misc.god-mode" label="SPY!"/>
             <AutoVariable width="fill" target="killstreak.enable" label="Killstreak counter"
                           tooltip="Adds a client-sided killstreak counter to your weapons."/>
             <AutoVariable width="fill" target="misc.backpack-expander.enabled" label="Expand backpack"/>
