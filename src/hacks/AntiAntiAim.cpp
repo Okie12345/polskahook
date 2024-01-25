@@ -1,8 +1,7 @@
 /*
-beta test
-jagoda3215
-1/22/2024
 you didn't fix resolver idiot
+
+jagoda - nice angles idiot
 */
 
 #include "common.hpp"
@@ -60,6 +59,7 @@ void frameStageNotify(ClientFrameStage_t stage)
 }
 
 static std::array<float, 8> yaw_resolves{ 0.0f, 180.0f, 65.0f, 90.0f, -180.0f, 260.0f, 80.0f, 20.0f };
+// static std::array<float, 8> yaw_resolves{ 180.0f, -65.0f, 65.0f, 90.0f, -180.0f, 90.0f, 80.0f, -80.0f };
 
 static float resolveAngleYaw(float angle, brutedata &brute)
 {
