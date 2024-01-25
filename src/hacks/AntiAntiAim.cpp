@@ -2,6 +2,7 @@
 beta test
 jagoda3215
 1/22/2024
+you didn't fix resolver idiot
 */
 
 #include "common.hpp"
@@ -22,63 +23,56 @@ static inline void modifyAngles()
     {
         if (RAW_ENT(player)->IsDormant() || !player->m_bEnemy() || !player->player_info->friendsID)
             continue;
-
         auto &data  = resolver_map[player->player_info->friendsID];
         auto &angle = CE_VECTOR(player, netvar.m_angEyeAngles);
         angle.x     = data.new_angle.x;
         angle.y     = data.new_angle.y;
     }
 }
-
 static inline void CreateMove()
 {
+    // Empty the array
     sniperdot_array.fill(nullptr);
-    // empty the ^
-
-    //sniper dots
+    // Find sniper dots
     for (auto &dot_ent : entity_cache::valid_ents)
     {
-        //no dot
+        // Not a sniper dot
         if (dot_ent->m_iClassID() != CL_CLASS(CSniperDot))
             continue;
-
-        //player belongs too
+        // Get the player it belongs to
         auto ent_idx = HandleToIDX(CE_INT(dot_ent, netvar.m_hOwnerEntity));
-
-        //idx chek
+        // IDX check
         if (IDX_BAD(ent_idx) || ent_idx > sniperdot_array.size() || ent_idx <= 0)
             continue;
-
-        //good sniper dot add too....
+        // Good sniper dot, add to array
         sniperdot_array.at(ent_idx - 1) = dot_ent;
-        //        ^^^^^
     }
 }
 
 void frameStageNotify(ClientFrameStage_t stage)
 {
+#if !ENABLE_TEXTMODE
     if (!enable || !g_IEngine->IsInGame())
         return;
-
     if (stage == FRAME_NET_UPDATE_POSTDATAUPDATE_START)
         modifyAngles();
+#endif
 }
 
-static std::array<float, 9> yaw_resolves{ 0.0f, 180.0f, 110.0f, -110.0f, -65.0f, 65.0f, -180.0f };
+static std::array<float, 8> yaw_resolves{ 0.0f, 180.0f, 65.0f, 90.0f, -180.0f, 260.0f, 80.0f, 20.0f };
 
 static float resolveAngleYaw(float angle, brutedata &brute)
 {
     brute.original_angle.y = angle;
-
     while (angle > 180)
         angle -= 360;
 
     while (angle < -180)
         angle += 360;
 
-    //yaws
-    //mika niista ?
-    int entry = static_cast<int>(std::floor((brute.brutenum / 2.0f))) % yaw_resolves.size();
+    // Yaw Resolving
+    // Find out which angle we should try
+    int entry = (int) std::floor((brute.brutenum / 4.0f)) % yaw_resolves.size();
     angle += yaw_resolves[entry];
 
     while (angle > 180)
@@ -86,40 +80,38 @@ static float resolveAngleYaw(float angle, brutedata &brute)
 
     while (angle < -180)
         angle += 360;
-
     brute.new_angle.y = angle;
     return angle;
 }
 
-    static float resolveAnglePitch(float angle, brutedata &brute, CachedEntity *ent)
+static float resolveAnglePitch(float angle, brutedata &brute, CachedEntity *ent)
 {
     brute.original_angle.x = angle;
 
-    // Get CSniperDot
+    // Get CSniperDot associated with entity
     CachedEntity *sniper_dot = nullptr;
 
-    //get weapon id
+    // Get Weapon id
     auto weapon_id = HandleToIDX(CE_INT(ent, netvar.hActiveWeapon));
 
-    //idx check
+    // Check IDX for validity
     if (IDX_GOOD(weapon_id))
     {
         auto weapon_ent = ENTITY(weapon_id);
-        // weaponvalidity
+        // Check weapon for validity
         if (CE_GOOD(weapon_ent) && (weapon_ent->m_iClassID() == CL_CLASS(CTFSniperRifle) || weapon_ent->m_iClassID() == CL_CLASS(CTFSniperRifleDecap) || weapon_ent->m_iClassID() == CL_CLASS(CTFSniperRifleClassic)))
         {
-            //get sniper dot
+            // Get Sniperdot
             sniper_dot = sniperdot_array.at(ent->m_IDX - 1);
             // Check if the dot is still good, if not then set to nullptr
             if (CE_BAD(sniper_dot) || sniper_dot->m_iClassID() != CL_CLASS(CSniperDot))
                 sniper_dot = nullptr;
         }
     }
-
-    // if no sniper dot we not using a sniperrifle.
+    // No sniper dot/not using a sniperrifle.
     if (sniper_dot == nullptr)
     {
-        if (brute.brutenum % 2)
+        if (brute.brutenum % 3)
         {
             // Pitch resolver
             if (angle >= 90)
@@ -128,17 +120,17 @@ static float resolveAngleYaw(float angle, brutedata &brute)
                 angle = 89;
         }
     }
-    // we found the sniper dot
+    // Sniper dot found, use it.
     else
     {
-        // end and start
+        // Get End and start point
         auto dot_origin = sniper_dot->m_vecOrigin();
         auto eye_origin = re::C_BasePlayer::GetEyePosition(RAW_ENT(ent));
-        // angle from eye to dot
+        // Get Angle from eye to dot
         Vector diff = dot_origin - eye_origin;
         Vector angles;
         VectorAngles(diff, angles);
-        // Use the pitch (yaw is not useable because sadly the sniper dot does not represent it with fake yaw) | paska kylla
+        // Use the pitch (yaw is not useable because sadly the sniper dot does not represent it with fake yaw)
         angle = angles.x;
     }
 
@@ -151,9 +143,7 @@ void increaseBruteNum(int idx)
     auto ent = ENTITY(idx);
     if (CE_BAD(ent) || !ent->player_info->friendsID)
         return;
-
     auto &data = hacks::anti_anti_aim::resolver_map[ent->player_info->friendsID];
-
     if (data.hits_in_a_row >= 4)
         data.hits_in_a_row = 2;
     else if (data.hits_in_a_row >= 2)
@@ -161,29 +151,14 @@ void increaseBruteNum(int idx)
     else
     {
         data.brutenum++;
-
         if (debug)
             logging::Info("AAA: Brutenum for entity %i increased to %i", idx, data.brutenum);
-
         data.hits_in_a_row = 0;
-
-        auto &angle      = CE_VECTOR(ent, netvar.m_angEyeAngles);
-        angle.x          = resolveAnglePitch(data.original_angle.x, data, ent);
-        angle.y          = resolveAngleYaw(data.original_angle.y, data);
-        data.new_angle.x = angle.x;
-        data.new_angle.y = angle.y;
-
-        //logic
-        if (data.brutenum % 2 == 0)
-        {
-            angle.x          = resolveAnglePitch(angle.x, data, ent);
-            data.new_angle.x = angle.x;
-        }
-        else
-        {
-            angle.y          = resolveAngleYaw(angle.y, data);
-            data.new_angle.y = angle.y;
-        }
+        auto &angle        = CE_VECTOR(ent, netvar.m_angEyeAngles);
+        angle.x            = resolveAnglePitch(data.original_angle.x, data, ent);
+        angle.y            = resolveAngleYaw(data.original_angle.y, data);
+        data.new_angle.x   = angle.x;
+        data.new_angle.y   = angle.y;
     }
 }
 
@@ -200,23 +175,8 @@ static void pitchHook(const CRecvProxyData *pData, void *pStruct, void *pOut)
 
     auto client_ent   = (IClientEntity *) (pStruct);
     CachedEntity *ent = ENTITY(client_ent->entindex());
-
     if (CE_GOOD(ent))
-    {
-        //original
-        float originalPitch = flPitch;
-
-        //pitch additional logic (varmasti toimi aika hyvin ekha)
-        flPitch = resolveAnglePitch(flPitch, resolver_map[ent->player_info->friendsID], ent);
-
-        //if debug
-        if (debug)
-        {
-            logging::Info("AAA: Pitch resolved for entity %i. Original: %.2f, Resolved: %.2f", client_ent->entindex(), originalPitch, flPitch);
-        }
-    }
-
-    *flPitch_out = flPitch;
+        *flPitch_out = resolveAnglePitch(flPitch, resolver_map[ent->player_info->friendsID], ent);
 }
 
 static void yawHook(const CRecvProxyData *pData, void *pStruct, void *pOut)
@@ -232,23 +192,8 @@ static void yawHook(const CRecvProxyData *pData, void *pStruct, void *pOut)
 
     auto client_ent   = (IClientEntity *) (pStruct);
     CachedEntity *ent = ENTITY(client_ent->entindex());
-
     if (CE_GOOD(ent))
-    {
-        //original
-        float originalYaw = flYaw;
-
-        //additional
-        flYaw = resolveAngleYaw(flYaw, resolver_map[ent->player_info->friendsID]);
-
-        //if debug
-        if (debug)
-        {
-            logging::Info("AAA: Yaw resolved for entity %i. Original: %.2f, Resolved: %.2f", client_ent->entindex(), originalYaw, flYaw);
-        }
-    }
-
-    *flYaw_out = flYaw;
+        *flYaw_out = resolveAngleYaw(flYaw, resolver_map[ent->player_info->friendsID]);
 }
 
 // *_ptr points to what we need to modify while *_ProxyFn holds the old value
@@ -263,7 +208,6 @@ static void hook()
     while (pClass)
     {
         const char *pszName = pClass->m_pRecvTable->m_pNetTableName;
-
         // "DT_TFPlayer", "tfnonlocaldata"
         if (!strcmp(pszName, "DT_TFPlayer"))
         {
@@ -274,14 +218,14 @@ static void hook()
                     continue;
                 const char *pszName2 = pProp1->m_pVarName;
                 if (!strcmp(pszName2, "tfnonlocaldata"))
-                    for (int j = 0; j < pProp1->m_pDataTable->m_nProps; j++)
+                    for (int j = 0; j < pProp1->m_pDataTable->m_nProps; ++j)
                     {
                         auto *pProp2 = (RecvPropRedef *) &(pProp1->m_pDataTable->m_pProps[j]);
                         if (!pProp2)
                             continue;
                         const char *name = pProp2->m_pVarName;
 
-                        //fix
+                        // Pitch Fix
                         if (!strcmp(name, "m_angEyeAngles[0]"))
                         {
                             original_ptrX     = &pProp2->m_ProxyFn;
@@ -289,7 +233,7 @@ static void hook()
                             pProp2->m_ProxyFn = pitchHook;
                         }
 
-                        //fix
+                        // Yaw Fix
                         if (!strcmp(name, "m_angEyeAngles[1]"))
                         {
                             original_ptrY = &pProp2->m_ProxyFn;
@@ -306,7 +250,6 @@ static void hook()
 
 static void shutdown()
 {
-    //restore origial
     *original_ptrX = original_ProxyFnX;
     *original_ptrY = original_ProxyFnY;
 }
@@ -314,38 +257,13 @@ static void shutdown()
 static InitRoutine init(
     []()
     {
-        //-_-//
         hook();
-
         EC::Register(EC::Shutdown, shutdown, "antiantiaim_shutdown");
-
         EC::Register(EC::CreateMove, CreateMove, "cm_antiantiaim");
         EC::Register(EC::CreateMoveWarp, CreateMove, "cmw_antiantiaim");
-
 #if ENABLE_TEXTMODE
         EC::Register(EC::CreateMove, modifyAngles, "cm_textmodeantiantiaim");
         EC::Register(EC::CreateMoveWarp, modifyAngles, "cmw_textmodeantiantiaim");
 #endif
     });
 } // namespace hacks::anti_anti_aim
-
-// vanha jos ^^^^^ ei toimi vaihdat vaan sen 
-/*static void shutdown()
-{
-    *original_ptrX = original_ProxyFnX;
-    *original_ptrY = original_ProxyFnY;
-}
-
-static InitRoutine init(
-    []()
-    {
-        hook();
-        EC::Register(EC::Shutdown, shutdown, "antiantiaim_shutdown");
-        EC::Register(EC::CreateMove, CreateMove, "cm_antiantiaim");
-        EC::Register(EC::CreateMoveWarp, CreateMove, "cmw_antiantiaim");
-#if ENABLE_TEXTMODE
-        EC::Register(EC::CreateMove, modifyAngles, "cm_textmodeantiantiaim");
-        EC::Register(EC::CreateMoveWarp, modifyAngles, "cmw_textmodeantiantiaim");
-#endif
-    });
-} // namespace hacks::anti_anti_aim*/

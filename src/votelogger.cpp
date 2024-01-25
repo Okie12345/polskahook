@@ -17,8 +17,10 @@ static settings::Boolean vote_rage_vote{ "votelogger.autovote.no.rage", "false" 
 static settings::Boolean chat{ "votelogger.chat", "true" };
 static settings::Boolean chat_partysay{ "votelogger.chat.partysay", "false" };
 static settings::Boolean chat_casts{ "votelogger.chat.casts", "false" };
+static settings::Boolean f2imnotbot{ "votelogger.f2please", "false" };
 static settings::Boolean saywhenimkicking{ "votelogger.kicksay", "false" };
 static settings::Boolean chat_casts_f1_only{ "votelogger.chat.casts.f1-only", "true" };
+static settings::Boolean requeue_on_kick{ "votelogger.requeue-on-kick", "false" };
 // Leave party and crash, useful for personal party bots
 static settings::Boolean abandon_and_crash_on_kick{ "votelogger.restart-on-kick", "false" };
 
@@ -108,12 +110,25 @@ void dispatchUserMessage(bf_read &buffer, int type)
         logging::Info("[%s] Vote called to kick %s [U:1:%u] for %s by %s [U:1:%u]", team_name, info.name, info.friendsID, reason, info2.name, info2.friendsID);
         if (info.friendsID == g_ISteamUser->GetSteamID().GetAccountID())
         {
-            if (*saywhenimkicking)
+            if (*requeue_on_kick)
             {
-                chat_stack::Say("F1, get this bot outta here!");
+                tfmm::StartQueue();
+            }
+
+            if (*f2imnotbot)
+            {
+                chat_stack::Say("f2 i'm not a bot", true);
             }
             was_local_player = true;
             local_kick_timer.update();
+        }
+
+         if (info2.friendsID == g_ISteamUser->GetSteamID().GetAccountID())
+        {
+            if (*saywhenimkicking)
+            {
+                chat_stack::Say("f1 cheater/bot", true);
+            }
         }
 
         if (*vote_kickn || *vote_kicky)
