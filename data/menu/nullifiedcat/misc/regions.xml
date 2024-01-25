@@ -1,5 +1,5 @@
 <Tab name="Regions" padding="4 4 4 4">
-<Box height="content" width="content" padding="12 6 6 6" name="Region selector" y="250">
+<Box height="content" width="content" padding="12 6 6 6" name="Region selector">
         <List width="155">
             <AutoVariable width="fill" target="dc.enable" label="Enable"/>
             <AutoVariable width="fill" target="dc.restrict" label="Only selected regions"/>

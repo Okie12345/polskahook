@@ -75,7 +75,7 @@
                     </LabeledObject>
                     <AutoVariable width="fill" target="antiaim.yaw.fake.static" label="Custom Fake"
                                   tooltip="Use when 'Fake Yaw' set to to 'Custom'."/>
-                    <AutoVariable width="fill" target="antiaim.yaw.real.static" label="Customowy Prawdziwy"
+                    <AutoVariable width="fill" target="antiaim.yaw.real.static" label="Custom Real"
                                   tooltip="Use when 'Real Yaw' is set to 'Custom'."/>
                 </List>
             </Box>
