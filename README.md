@@ -36,34 +36,34 @@ Open a terminal window and enter the following command:
     bash <(wget -qO- https://raw.githubusercontent.com/MasterCatPL/One-in-all-polskahook-install/master/install-all)
 
 
-Folder `polskahook` powinien zostać stworzony i zawierać wszystkie pliki źródłowe.
+The polskahook folder should be created and contain all source files.
 
-### Kompilowanie ze źródła
+### Compiling from Source
 
-Kiedy już będziesz miał kopię źródła polskahook, następnym krokiem będzie otworzenie go w IDE twojego wyboru.
+Once you have a copy of the polskahook source, the next step is to open it in your chosen IDE.
 
-Zmień wszystkie `-march=native -mtune=native` argumenty w [CMakeLists.txt](https://github.com/explowz/cathook/blob/master/CMakeLists.txt) do `-march=<your cpu-type> -mtune=<your cpu-type>`. Powinno to skutkować bardziej wydajnym kodem, zoptymalizowanym pod twoje CPU. Listę prawidłowych opcji można znaleźć [tutaj](https://gcc.gnu.org/onlinedocs/gcc/x86-Options.html).
+Change all -march=native -mtune=native arguments in [CMakeLists.txt](https://github.com/explowz/cathook/blob/master/CMakeLists.txt) to -march=<your cpu-type> -mtune=<your cpu-type>. This should result in more efficient code optimized for your CPU. You can find a list of valid options [here](https://gcc.gnu.org/onlinedocs/gcc/x86-Options.html).
 
-I po prostu uruchom tą komendę kiedy jesteś w folderze z kodem źródłowym:
+And simply run this command when you are in the source code folder:
 
     ./update
 
-Jeżeli wszytsko poszło dobrze, powinieneś otrzymać następującą binarkę `libcathook.so`.
+If everything goes well, you should receive the binary libcathook.so.
 
-### Ładowanie / Injectowanie do procesu gry
+### Loading / Injecting into the Game Process
 
-Uruchom następującą komendę kiedy jesteś w folderze z kodem źródłowym:
+Run the following command when you are in the source code folder:
 
     sudo ./attach
 
-To zinjectuje `libcathook.so` do procesu `hl2_linux`.
+This will inject libcathook.so into the hl2_linux process.
 
-Kiedy zainjectowany, klawisz `INSERT` uruchamia menu.
+Once injected, the INSERT key opens the menu.
 
 ## FAQ
 
-### Jak mogę otworzyć menu?
-Naciśnij klawisz <kbd>INSERT</kbd>
+### How can I open the menu?
+Press the <kbd>INSERT</kbd> key.
 
-### Gdzie jest zlokalizowany mój plik cfg?
-Pliki konfiguracyjne są zlokalizowane w folderze `cathook` który jest zlokalizowany w folderze `opt` (`/opt/cathook/data`). Plik cfg jest czytelny dla człowieka i może być edytowany w edytorze tekstu twojego wyboru.
+### Where is the config file located?
+Configuration files are located in the `cathook` folder, which is in the `opt` directory (/opt/cathook/data). The cfg file is human-readable and can be edited in the text editor of your choice.
