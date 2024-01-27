@@ -3,37 +3,38 @@
 [![TF2](https://img.shields.io/badge/game-TF2-orange.svg?style=flat-square)](https://store.steampowered.com/app/440/Team_Fortress_2/)
 [![GNU/Linux](https://img.shields.io/badge/platform-GNU%2FLinux-ff69b4?style=flat-square)](https://www.gnu.org/gnu/linux-and-gnu.en.html)
 [![x86](https://img.shields.io/badge/arch-x86-red.svg?style=flat-square)](https://en.wikipedia.org/wiki/X86)
-[![Licencja](https://img.shields.io/github/license/MasterCatPL/polskahook.svg?style=flat-square)](LICENSE)
-[![Problemy](https://img.shields.io/github/issues/MasterCatPL/polskahook.svg?style=flat-square)](https://github.com/MasterCatPL/polskahook/issues)
+[![License](https://img.shields.io/github/license/MasterCatPL/polskahook.svg?style=flat-square)](LICENSE)
+[![Issues](https://img.shields.io/github/issues/MasterCatPL/polskahook.svg?style=flat-square)](https://github.com/MasterCatPL/polskahook/issues)
 
-Darmowy program do cheatowania o otwartym źródle na GNU/Linux do gry **Team Fortress 2**. Zaprojektowany jako internal cheat - [Wspólna Biblioteka](https://en.wikipedia.org/wiki/Library_(computing)#Shared_libraries) (SO) ładowany do procesu gry. Kompatybilny ze Steamową wersją gry.
+A free, open-source cheating program for GNU/Linux for the game **Team Fortress 2**. Designed as an internal cheat - [Shared Library](https://en.wikipedia.org/wiki/Library_(computing)#Shared_libraries) (SO) loaded into the game process. Compatible with the Steam version of the game.
 
-## Spis Treści
+## Table of Contents
 
-- [Spis Treści](#spis-treści)
-- [Jak rozpocząć](#jak-rozpocząć)
-    - [Zależnośći](#zależności)
-    - [Pobieranie](#pobieranie)
-    - [Kompilowanie ze źródła](#kompilowanie-ze-źródła)
-    - [Ładowanie / Injectowanie w proces gry](#Ładowanie--Injectowanie-do-procesu-gry)
+- [Table of Contents](#table-of-contents)
+- [Getting Started](#getting-started)
+    - [Dependencies](#dependencies)
+    - [Downloading](#downloading)
+    - [Compiling from Source](#compiling-from-source)
+    - [Loading / Injecting into the Game Process](#loading--injecting-into-the-game-process)
 - [FAQ](#faq)
-    - [Jak mogę otworzyć menu?](#jak-mogę-otworzyć-menu)
-    - [Gdzie jest zlokalizowany mój plik cfg?](#gdzie-jest-zlokalizowany-mój-plik-cfg)
-    - [Ładowanie / Injectowanie do procesu gry](#Ładowanie--Injectowanie-do-procesu-gry)
+    - [How can I open the menu?](#how-can-i-open-the-menu)
+    - [Where is my cfg file located?](#where-is-my-cfg-file-located)
+    - [Loading / Injecting into the Game Process](#loading--injecting-into-the-game-process)
 
-## Jak rozpocząć
+## Getting Started
 
-### Zależności
+### Dependencies
 
-Paczka `dialog` nie jest obowiązkowa, ale rekomendowana.
+The `dialog` package is not mandatory but recommended.
 
-Zależnośći są sprawdzane automatycznie przez [dependencycheck](https://github.com/explowz/cathook/blob/master/scripts/dependencycheck).
+Dependencies are checked automatically by [dependencycheck](https://github.com/explowz/cathook/blob/master/scripts/dependencycheck).
 
-### Pobieranie
+### Downloading
 
-Otwórz okno terminala i wpisz następującą komendę:
+Open a terminal window and enter the following command:
 
     bash <(wget -qO- https://raw.githubusercontent.com/MasterCatPL/One-in-all-polskahook-install/master/install-all)
+
 
 Folder `polskahook` powinien zostać stworzony i zawierać wszystkie pliki źródłowe.
 
