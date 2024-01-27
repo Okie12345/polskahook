@@ -6,7 +6,7 @@
 [![Licencja](https://img.shields.io/github/license/MasterCatPL/polskahook.svg?style=flat-square)](LICENSE)
 [![Problemy](https://img.shields.io/github/issues/MasterCatPL/polskahook.svg?style=flat-square)](https://github.com/MasterCatPL/polskahook/issues)
 
-Darmowy program do ćwiczenia o otwartym źródle na GNU/Linux do gry **Team Fortress 2**. Zaprojektowany jako internal cheat - [Wspólna Biblioteka](https://en.wikipedia.org/wiki/Library_(computing)#Shared_libraries) (SO) ładowany do procesu gry. Kompatybilny ze Steamową wersją gry.
+Darmowy program do cheatowania o otwartym źródle na GNU/Linux do gry **Team Fortress 2**. Zaprojektowany jako internal cheat - [Wspólna Biblioteka](https://en.wikipedia.org/wiki/Library_(computing)#Shared_libraries) (SO) ładowany do procesu gry. Kompatybilny ze Steamową wersją gry.
 
 ## Spis Treści
 
