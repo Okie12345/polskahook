@@ -328,7 +328,7 @@ bool findEdge(float edgeOrigYaw)
 // Function to give you a static angle to use
 float useEdge(float edgeViewAngle)
 {
-    // Var to be disabled when a angle is choosen to prevent the others from
+    // Var to be disabled when an angle is chosen to prevent the others from
     // conflicting
     bool edgeTest = true;
     if (((edgeViewAngle < -135) || (edgeViewAngle > 135)) && edgeTest == true)
