@@ -302,7 +302,7 @@ bool findEdge(float edgeOrigYaw)
     if (edgeRightDist >= 260)
         edgeRightDist = 999999999;
 
-    // If none of the vectors found a wall, then dont edge
+    // If none of the vectors found a wall, then don't edge
     if (edgeLeftDist == edgeRightDist)
         return false;
 
